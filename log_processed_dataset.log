@@ -1,0 +1,92 @@
+[2023-06-07 11:23:39,887][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-06-07 11:23:39,893][__main__][INFO] - Instantiating datamodule <src.data.lafan_mvae_locomotion_datamodule_normalize.LAFANDataModule>
+[2023-06-07 11:23:39,919][__main__][INFO] - Instantiating model <src.models.mvae_module_scheduled_sampling.MVAEModule>
+[2023-06-07 11:23:40,639][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-06-07 11:23:40,746][__main__][INFO] - Starting inference!
+[2023-06-07 11:26:10,009][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/log_processed_dataset.py", line 71, in log_dataset
+    torch.save(torch.cat(datamodule.data_train.dataset.data, datamodule.data_val.dataset.data, datamodule.data_test.dataset.data), os.path.dirname(cfg.ckpt_path))
+AttributeError: 'LAFANDataModule' object has no attribute 'dataset'
+[2023-06-07 11:26:10,015][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-06-07_11-23-39
+[2023-06-07 11:26:20,799][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-06-07 11:26:20,804][__main__][INFO] - Instantiating datamodule <src.data.lafan_mvae_locomotion_datamodule_normalize.LAFANDataModule>
+[2023-06-07 11:26:20,831][__main__][INFO] - Instantiating model <src.models.mvae_module_scheduled_sampling.MVAEModule>
+[2023-06-07 11:26:21,553][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-06-07 11:26:21,662][__main__][INFO] - Starting inference!
+[2023-06-07 11:26:48,418][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/log_processed_dataset.py", line 71, in log_dataset
+    torch.save(torch.cat(datamodule.data_train.dataset.data, datamodule.data_val.dataset.data, datamodule.data_test.dataset.data), os.path.dirname(cfg.ckpt_path))
+AttributeError: 'PoseSequenceDataset' object has no attribute 'dataset'
+[2023-06-07 11:26:48,427][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-06-07_11-26-20
+[2023-06-07 11:32:17,501][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-06-07 11:32:17,506][__main__][INFO] - Instantiating datamodule <src.data.lafan_mvae_locomotion_datamodule_normalize.LAFANDataModule>
+[2023-06-07 11:32:17,532][__main__][INFO] - Instantiating model <src.models.mvae_module_scheduled_sampling.MVAEModule>
+[2023-06-07 11:32:18,227][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-06-07 11:32:18,333][__main__][INFO] - Starting inference!
+[2023-06-07 11:33:26,858][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/log_processed_dataset.py", line 71, in log_dataset
+    torch.save(torch.cat(datamodule.data_train.data, datamodule.data_check.data), os.path.dirname(cfg.ckpt_path))
+TypeError: cat() received an invalid combination of arguments - got (Tensor, Tensor), but expected one of:
+ * (tuple of Tensors tensors, int dim, *, Tensor out)
+ * (tuple of Tensors tensors, name dim, *, Tensor out)
+
+[2023-06-07 11:33:26,863][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-06-07_11-32-17
+[2023-06-07 11:33:59,605][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-06-07 11:33:59,611][__main__][INFO] - Instantiating datamodule <src.data.lafan_mvae_locomotion_datamodule_normalize.LAFANDataModule>
+[2023-06-07 11:33:59,637][__main__][INFO] - Instantiating model <src.models.mvae_module_scheduled_sampling.MVAEModule>
+[2023-06-07 11:34:00,340][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-06-07 11:34:00,449][__main__][INFO] - Starting inference!
+[2023-06-07 11:34:03,447][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/log_processed_dataset.py", line 71, in log_dataset
+    torch.save(torch.cat([datamodule.data_train.data, datamodule.data_check.data]), os.path.dirname(cfg.ckpt_path))
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/serialization.py", line 440, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/serialization.py", line 315, in _open_zipfile_writer
+    return container(name_or_buffer)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/serialization.py", line 288, in __init__
+    super().__init__(torch._C.PyTorchFileWriter(str(name)))
+RuntimeError: File /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/mvae_locomotion_normalized/checkpoints cannot be opened.
+[2023-06-07 11:34:03,451][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-06-07_11-33-59
+[2023-06-07 11:34:42,738][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-06-07 11:34:42,743][__main__][INFO] - Instantiating datamodule <src.data.lafan_mvae_locomotion_datamodule_normalize.LAFANDataModule>
+[2023-06-07 11:34:42,770][__main__][INFO] - Instantiating model <src.models.mvae_module_scheduled_sampling.MVAEModule>
+[2023-06-07 11:34:43,476][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-06-07 11:34:43,585][__main__][INFO] - Starting inference!
+[2023-06-07 11:34:47,609][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/log_processed_dataset.py", line 71, in log_dataset
+    torch.save(torch.cat([datamodule.data_train.data, datamodule.data_check.data]), os.path.dirname(cfg.ckpt_path))
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/serialization.py", line 440, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/serialization.py", line 315, in _open_zipfile_writer
+    return container(name_or_buffer)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/serialization.py", line 288, in __init__
+    super().__init__(torch._C.PyTorchFileWriter(str(name)))
+RuntimeError: File /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/mvae_locomotion_normalized/checkpoints cannot be opened.
+[2023-06-07 11:34:47,612][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-06-07_11-34-42
+[2023-06-07 11:35:22,193][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-06-07 11:35:22,199][__main__][INFO] - Instantiating datamodule <src.data.lafan_mvae_locomotion_datamodule_normalize.LAFANDataModule>
+[2023-06-07 11:35:22,225][__main__][INFO] - Instantiating model <src.models.mvae_module_scheduled_sampling.MVAEModule>
+[2023-06-07 11:35:22,927][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-06-07 11:35:23,036][__main__][INFO] - Starting inference!
+[2023-06-07 11:35:33,806][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-06-07_11-35-21
+[2023-06-07 12:01:26,747][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-06-07 12:01:26,753][__main__][INFO] - Instantiating datamodule <src.data.lafan_mvae_locomotion_datamodule.LAFANDataModule>
+[2023-06-07 12:01:26,788][__main__][INFO] - Instantiating model <src.models.mvae_module_scheduled_sampling.MVAEModule>
+[2023-06-07 12:01:27,467][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-06-07 12:01:27,572][__main__][INFO] - Starting inference!
+[2023-06-07 12:01:33,135][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-06-07_12-01-26

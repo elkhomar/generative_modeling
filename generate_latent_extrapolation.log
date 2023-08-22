@@ -1,0 +1,148 @@
+[2023-05-15 15:37:22,686][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-15 15:37:22,688][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-15 15:37:22,691][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-15 15:37:22,708][__main__][INFO] - Starting visualisation!
+[2023-05-15 15:37:23,163][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+TypeError: cannot unpack non-iterable NoneType object
+[2023-05-15 15:37:23,165][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-15_15-37-22
+[2023-05-15 18:27:52,029][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-15 18:27:52,031][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-15 18:27:52,033][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-15 18:27:52,044][__main__][INFO] - Starting visualisation!
+[2023-05-15 18:27:52,582][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+TypeError: cannot unpack non-iterable NoneType object
+[2023-05-15 18:27:52,584][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-15_18-27-51
+[2023-05-15 21:01:49,511][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-15 21:01:49,513][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-15 21:01:49,515][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-15 21:01:49,535][__main__][INFO] - Starting visualisation!
+[2023-05-15 21:01:50,108][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+TypeError: cannot unpack non-iterable NoneType object
+[2023-05-15 21:01:50,118][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-15_21-01-49
+[2023-05-15 21:05:55,230][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-15 21:05:55,231][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_rot6d_datamodule.LAFANDataModule>
+[2023-05-15 21:05:55,250][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-15 21:05:55,260][__main__][INFO] - Starting visualisation!
+[2023-05-15 21:05:57,268][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+TypeError: cannot unpack non-iterable NoneType object
+[2023-05-15 21:05:57,270][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-15_21-05-55
+[2023-05-15 21:06:37,510][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-15 21:06:37,512][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_rot6d_datamodule.LAFANDataModule>
+[2023-05-15 21:06:37,524][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-15 21:06:37,535][__main__][INFO] - Starting visualisation!
+[2023-05-15 21:06:39,400][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/generate_latent_extrapolation.py", line 83, in visualize
+    os.mkdir(directory + '/latent_extrapolation')
+FileExistsError: [Errno 17] File exists: '/home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/rot6d_lat8_seq2_beta0.002/checkpoints/latent_extrapolation'
+[2023-05-15 21:06:39,402][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-15_21-06-37
+[2023-05-16 14:54:54,116][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-16 14:54:54,118][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_rot6d_datamodule.LAFANDataModule>
+[2023-05-16 14:54:54,143][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-16 14:54:54,155][__main__][INFO] - Starting visualisation!
+[2023-05-16 14:54:56,467][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+TypeError: cannot unpack non-iterable NoneType object
+[2023-05-16 14:54:56,470][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-16_14-54-54
+[2023-05-16 17:20:56,832][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-16 17:20:56,834][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_rot6d_datamodule.LAFANDataModule>
+[2023-05-16 17:20:56,862][__main__][INFO] - Instantiating model <src.models.beta_vae_module_rot6d_loss.beta_VAEModule>
+[2023-05-16 17:20:56,878][__main__][INFO] - Starting visualisation!
+[2023-05-16 17:20:59,345][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+TypeError: cannot unpack non-iterable NoneType object
+[2023-05-16 17:20:59,347][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-16_17-20-56
+[2023-05-17 13:52:51,545][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-17 13:52:51,547][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_rot6d_datamodule.LAFANDataModule>
+[2023-05-17 13:52:51,560][__main__][INFO] - Instantiating model <src.models.beta_vae_module_rot6d_loss.beta_VAEModule>
+[2023-05-17 13:52:51,575][__main__][INFO] - Starting visualisation!
+[2023-05-17 13:52:53,618][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/generate_latent_extrapolation.py", line 92, in visualize
+    base_sigma = torch.ones_like(base_sigma)
+UnboundLocalError: local variable 'base_sigma' referenced before assignment
+[2023-05-17 13:52:53,620][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-17_13-52-51
+[2023-05-17 13:53:48,923][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-17 13:53:48,925][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_rot6d_datamodule.LAFANDataModule>
+[2023-05-17 13:53:48,938][__main__][INFO] - Instantiating model <src.models.beta_vae_module_rot6d_loss.beta_VAEModule>
+[2023-05-17 13:53:48,949][__main__][INFO] - Starting visualisation!
+[2023-05-17 13:53:50,977][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/generate_latent_extrapolation.py", line 83, in visualize
+    os.mkdir(directory + '/latent_extrapolation')
+FileExistsError: [Errno 17] File exists: '/home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/rot6d_noTpose/checkpoints/latent_extrapolation'
+[2023-05-17 13:53:50,979][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-17_13-53-48
+[2023-05-17 13:53:58,968][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-17 13:53:58,970][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_rot6d_datamodule.LAFANDataModule>
+[2023-05-17 13:53:58,984][__main__][INFO] - Instantiating model <src.models.beta_vae_module_rot6d_loss.beta_VAEModule>
+[2023-05-17 13:53:58,995][__main__][INFO] - Starting visualisation!
+[2023-05-17 13:54:01,338][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+TypeError: cannot unpack non-iterable NoneType object
+[2023-05-17 13:54:01,340][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-17_13-53-58
+[2023-05-17 13:59:56,238][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-17 13:59:56,240][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_rot6d_datamodule.LAFANDataModule>
+[2023-05-17 13:59:56,252][__main__][INFO] - Instantiating model <src.models.beta_vae_module_rot6d_loss.beta_VAEModule>
+[2023-05-17 13:59:56,262][__main__][INFO] - Starting visualisation!
+[2023-05-17 13:59:58,285][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/generate_latent_extrapolation.py", line 82, in visualize
+    latent_zero_pose = torch.zeros_like(torch.load(directory + '/mu_test.pt')[0])
+UnboundLocalError: local variable 'directory' referenced before assignment
+[2023-05-17 13:59:58,288][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-17_13-59-56
+[2023-05-17 14:00:36,679][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-17 14:00:36,681][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_rot6d_datamodule.LAFANDataModule>
+[2023-05-17 14:00:36,694][__main__][INFO] - Instantiating model <src.models.beta_vae_module_rot6d_loss.beta_VAEModule>
+[2023-05-17 14:00:36,705][__main__][INFO] - Starting visualisation!
+[2023-05-17 14:00:39,117][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+TypeError: cannot unpack non-iterable NoneType object
+[2023-05-17 14:00:39,119][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-17_14-00-36
+[2023-05-17 14:59:17,048][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-17 14:59:17,050][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_rot6d_datamodule.LAFANDataModule>
+[2023-05-17 14:59:17,068][__main__][INFO] - Instantiating model <src.models.beta_vae_module_rot6d_loss.beta_VAEModule>
+[2023-05-17 14:59:17,080][__main__][INFO] - Starting visualisation!
+[2023-05-17 14:59:19,362][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+TypeError: cannot unpack non-iterable NoneType object
+[2023-05-17 14:59:19,364][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-17_14-59-16
+[2023-05-17 15:02:42,862][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-17 15:02:42,863][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_rot6d_datamodule.LAFANDataModule>
+[2023-05-17 15:02:42,875][__main__][INFO] - Instantiating model <src.models.beta_vae_module_rot6d_loss.beta_VAEModule>
+[2023-05-17 15:02:42,887][__main__][INFO] - Starting visualisation!
+[2023-05-17 15:02:47,170][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+TypeError: cannot unpack non-iterable NoneType object
+[2023-05-17 15:02:47,172][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-17_15-02-42

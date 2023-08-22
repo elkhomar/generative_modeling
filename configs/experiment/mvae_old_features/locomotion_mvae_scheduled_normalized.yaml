@@ -1,0 +1,34 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+defaults:
+  - override /data: lafan_mvae_locomotion_normalize.yaml
+  - override /model: mvae_scheduled_sampling.yaml
+  - override /trainer: default.yaml
+  - override /logger: wandb.yaml
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+tags: ["mvae", "real pose representation", "scheduled sampling p 20/20/140, middle linear", "locomotion dataset"]
+
+seed: 42
+
+trainer:
+  min_epochs: 90
+  max_epochs: 1000
+
+data:
+  batch_size: 64
+
+logger:
+  wandb:
+    tags: ${tags}
+    group: "mvae"
+  aim:
+    experiment: "beta = ${model.beta} latent_dim = ${model.latent_dim}"
+
+# simply provide checkpoint path to resume training
+ckpt_path: ${paths.log_dir}train/runs/mvae_locomotion_normalized/checkpoints/last.ckpt

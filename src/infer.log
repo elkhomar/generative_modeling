@@ -1,0 +1,541 @@
+[2023-05-03 18:35:31,981][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-03 18:35:31,985][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-03 18:35:31,985][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-03 18:35:32,017][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-03 18:35:32,023][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-03 18:35:32,037][__main__][INFO] - Instantiating loggers...
+[2023-05-03 18:35:32,037][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-03 18:35:37,606][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-03 18:35:37,654][__main__][INFO] - Logging hyperparameters!
+[2023-05-03 18:35:37,660][__main__][INFO] - Starting inference!
+[2023-05-03 18:35:37,776][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/infer.py", line 77, in infer
+    trainer.predict(model=model, dataloaders=datamodule.train_dataloader, ckpt_path=cfg.ckpt_path + "/train/")
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 805, in predict
+    return call._call_and_handle_interrupt(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 847, in _predict_impl
+    results = self._run(model, ckpt_path=ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 901, in _run
+    self._checkpoint_connector._restore_modules_and_callbacks(ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/connectors/checkpoint_connector.py", line 395, in _restore_modules_and_callbacks
+    self.resume_start(checkpoint_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/connectors/checkpoint_connector.py", line 82, in resume_start
+    loaded_checkpoint = self.trainer.strategy.load_checkpoint(checkpoint_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/strategies/strategy.py", line 347, in load_checkpoint
+    return self.checkpoint_io.load_checkpoint(checkpoint_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/fabric/plugins/io/torch_io.py", line 87, in load_checkpoint
+    raise FileNotFoundError(f"Checkpoint at {path} not found. Aborting training.")
+FileNotFoundError: Checkpoint at /home/kinetix/Documents/Hydra/lightning-hydra-template/logs//train/runs/2023-05-03_11-22-15/checkpoints/last.ckpt/train/ not found. Aborting training.
+[2023-05-03 18:35:37,778][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-03_18-35-31
+[2023-05-03 18:35:37,778][src.utils.utils][INFO] - Closing wandb!
+[2023-05-03 18:40:17,308][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-03 18:40:17,313][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-03 18:40:17,313][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-03 18:40:17,347][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-03 18:40:17,350][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-03 18:40:17,357][__main__][INFO] - Instantiating loggers...
+[2023-05-03 18:40:17,357][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-03 18:40:22,792][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-03 18:40:22,840][__main__][INFO] - Logging hyperparameters!
+[2023-05-03 18:40:22,846][__main__][INFO] - Starting inference!
+[2023-05-03 18:40:24,008][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/connectors/data_connector.py", line 383, in _check_dataloader_iterable
+    iter(dataloader)  # type: ignore[call-overload]
+TypeError: 'method' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/infer.py", line 77, in infer
+    prediction = trainer.predict(model=model, dataloaders=datamodule.train_dataloader, ckpt_path=cfg.ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 805, in predict
+    return call._call_and_handle_interrupt(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 847, in _predict_impl
+    results = self._run(model, ckpt_path=ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 935, in _run
+    results = self._run_stage()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 973, in _run_stage
+    return self.predict_loop.run()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/loops/utilities.py", line 177, in _decorator
+    return loop_run(self, *args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/loops/prediction_loop.py", line 101, in run
+    self.setup_data()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/loops/prediction_loop.py", line 144, in setup_data
+    _check_dataloader_iterable(dl, source, trainer_fn)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/connectors/data_connector.py", line 388, in _check_dataloader_iterable
+    raise TypeError(
+TypeError: An invalid dataloader was passed to `Trainer.predict(dataloaders=...)`. Found <bound method LAFANDataModule.train_dataloader of <src.data.lafan_pose_datamodule.LAFANDataModule object at 0x7ff1014db220>>.
+[2023-05-03 18:40:24,010][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-03_18-40-17
+[2023-05-03 18:40:24,011][src.utils.utils][INFO] - Closing wandb!
+[2023-05-03 18:44:23,720][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-03 18:44:23,725][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-03 18:44:23,725][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-03 18:44:23,759][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-03 18:44:23,761][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-03 18:44:23,767][__main__][INFO] - Instantiating loggers...
+[2023-05-03 18:44:23,768][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-03 18:44:28,881][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-03 18:44:28,926][__main__][INFO] - Logging hyperparameters!
+[2023-05-03 18:44:28,931][__main__][INFO] - Starting inference!
+[2023-05-03 18:44:28,932][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/infer.py", line 77, in infer
+    prediction = trainer.predict(model=model, dataloader=datamodule.train_dataloader, ckpt_path=cfg.ckpt_path)
+TypeError: predict() got an unexpected keyword argument 'dataloader'
+[2023-05-03 18:44:28,933][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-03_18-44-23
+[2023-05-03 18:44:28,934][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 12:00:29,791][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 12:00:29,801][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 12:00:29,801][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-09 12:00:29,829][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 12:00:29,831][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-09 12:00:29,836][__main__][INFO] - Instantiating loggers...
+[2023-05-09 12:00:29,836][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-09 12:00:33,833][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 12:00:33,886][__main__][INFO] - Logging hyperparameters!
+[2023-05-09 12:00:33,901][__main__][INFO] - Starting inference!
+[2023-05-09 12:00:50,249][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-09_12-00-29
+[2023-05-09 12:00:50,249][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 13:52:42,257][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 13:52:42,261][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 13:52:42,261][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-09 13:52:42,289][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 13:52:42,291][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-09 13:52:42,296][__main__][INFO] - Instantiating loggers...
+[2023-05-09 13:52:42,296][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-09 13:52:46,243][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 13:52:46,286][__main__][INFO] - Logging hyperparameters!
+[2023-05-09 13:52:46,292][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/infer.py", line 76, in infer
+    model.load_from_checkpoint(cfg.ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/module.py", line 1531, in load_from_checkpoint
+    loaded = _load_from_checkpoint(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 62, in _load_from_checkpoint
+    checkpoint = pl_load(checkpoint_path, map_location=map_location)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/fabric/utilities/cloud_io.py", line 50, in _load
+    with fs.open(path_or_url, "rb") as f:
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/fsspec/spec.py", line 1154, in open
+    f = self._open(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/fsspec/implementations/local.py", line 183, in _open
+    return LocalFileOpener(path, mode, fs=self, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/fsspec/implementations/local.py", line 287, in __init__
+    self._open()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/fsspec/implementations/local.py", line 292, in _open
+    self.f = open(self.path, mode=self.mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kinetix/Documents/Hydra/lightning-hydra-template/logs//train/runs/2023-05-09_13-47-54/checkpoints/last.ckpt'
+[2023-05-09 13:52:46,302][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-09_13-52-42
+[2023-05-09 13:52:46,302][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 13:54:00,638][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 13:54:00,641][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 13:54:00,641][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-09 13:54:00,670][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 13:54:00,672][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-09 13:54:00,677][__main__][INFO] - Instantiating loggers...
+[2023-05-09 13:54:00,677][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-09 13:54:04,637][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 13:54:04,687][__main__][INFO] - Logging hyperparameters!
+[2023-05-09 13:54:04,701][__main__][INFO] - Starting inference!
+[2023-05-09 13:54:20,607][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-09_13-54-00
+[2023-05-09 13:54:20,608][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 14:11:00,159][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 14:11:00,162][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 14:11:00,163][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-09 14:11:00,191][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 14:11:00,193][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-09 14:11:00,198][__main__][INFO] - Instantiating loggers...
+[2023-05-09 14:11:00,198][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-09 14:11:04,363][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 14:11:04,411][__main__][INFO] - Logging hyperparameters!
+[2023-05-09 14:11:04,421][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/infer.py", line 76, in infer
+    model.load_from_checkpoint(cfg.ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/module.py", line 1531, in load_from_checkpoint
+    loaded = _load_from_checkpoint(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 90, in _load_from_checkpoint
+    return _load_state(cls, checkpoint, strict=strict, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 136, in _load_state
+    obj = cls(**_cls_kwargs)
+TypeError: __init__() missing 4 required positional arguments: 'optimizer', 'scheduler', 'input_dim', and 'latent_dim'
+[2023-05-09 14:11:04,429][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-09_14-11-00
+[2023-05-09 14:11:04,430][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 14:11:46,283][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 14:11:46,287][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 14:11:46,287][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-09 14:11:46,313][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 14:11:46,315][__main__][INFO] - Instantiating model <src.models.old_vae.VAE>
+[2023-05-09 14:11:46,318][__main__][INFO] - Instantiating loggers...
+[2023-05-09 14:11:46,318][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-09 14:11:50,244][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 14:11:50,291][__main__][INFO] - Logging hyperparameters!
+[2023-05-09 14:11:50,302][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/infer.py", line 76, in infer
+    model.load_from_checkpoint(cfg.ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/module.py", line 1531, in load_from_checkpoint
+    loaded = _load_from_checkpoint(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 90, in _load_from_checkpoint
+    return _load_state(cls, checkpoint, strict=strict, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 136, in _load_state
+    obj = cls(**_cls_kwargs)
+TypeError: __init__() missing 2 required positional arguments: 'input_dim' and 'latent_dim'
+[2023-05-09 14:11:50,303][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-09_14-11-46
+[2023-05-09 14:11:50,303][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 14:13:41,814][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 14:13:41,818][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 14:13:41,818][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-09 14:13:41,844][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 14:13:41,846][__main__][INFO] - Instantiating model <src.models.old_vae.VAE>
+[2023-05-09 14:13:41,848][__main__][INFO] - Instantiating loggers...
+[2023-05-09 14:13:41,849][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-09 14:13:45,920][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 14:13:45,971][__main__][INFO] - Logging hyperparameters!
+[2023-05-09 14:13:45,982][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/infer.py", line 76, in infer
+    model.load_from_checkpoint(cfg.ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/module.py", line 1531, in load_from_checkpoint
+    loaded = _load_from_checkpoint(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 90, in _load_from_checkpoint
+    return _load_state(cls, checkpoint, strict=strict, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 136, in _load_state
+    obj = cls(**_cls_kwargs)
+TypeError: __init__() missing 2 required positional arguments: 'input_dim' and 'latent_dim'
+[2023-05-09 14:13:45,983][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-09_14-13-41
+[2023-05-09 14:13:45,983][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 14:50:35,382][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 14:50:35,386][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 14:50:35,386][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-09 14:50:35,386][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-05-09 14:50:35,408][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 14:50:35,410][__main__][INFO] - Instantiating model <src.models.old_vae.VAE>
+[2023-05-09 14:50:35,412][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 14:50:35,460][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/infer.py", line 68, in infer
+    model.load_from_checkpoint(cfg.ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/module.py", line 1531, in load_from_checkpoint
+    loaded = _load_from_checkpoint(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 90, in _load_from_checkpoint
+    return _load_state(cls, checkpoint, strict=strict, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 136, in _load_state
+    obj = cls(**_cls_kwargs)
+TypeError: __init__() missing 2 required positional arguments: 'input_dim' and 'latent_dim'
+[2023-05-09 14:50:35,461][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-09_14-50-35
+[2023-05-09 15:00:04,775][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 15:00:04,779][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 15:00:04,779][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-09 15:00:04,779][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-05-09 15:00:04,807][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 15:00:04,810][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-09 15:00:04,816][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 15:00:04,880][__main__][INFO] - Starting inference!
+[2023-05-09 15:00:22,301][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-09_15-00-04
+[2023-05-09 15:05:02,012][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 15:05:02,016][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 15:05:02,016][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-09 15:05:02,016][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-05-09 15:05:02,038][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 15:05:02,040][__main__][INFO] - Instantiating model <src.models.old_vae.VAE>
+[2023-05-09 15:05:02,043][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 15:05:02,096][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/infer.py", line 68, in infer
+    model.load_from_checkpoint(cfg.ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/module.py", line 1531, in load_from_checkpoint
+    loaded = _load_from_checkpoint(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 90, in _load_from_checkpoint
+    return _load_state(cls, checkpoint, strict=strict, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 136, in _load_state
+    obj = cls(**_cls_kwargs)
+TypeError: __init__() missing 2 required positional arguments: 'input_dim' and 'latent_dim'
+[2023-05-09 15:05:02,097][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-09_15-05-01
+[2023-05-09 15:06:59,943][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 15:06:59,947][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 15:06:59,947][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-09 15:06:59,947][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-05-09 15:06:59,971][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 15:06:59,974][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-09 15:06:59,986][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 15:07:00,032][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/infer.py", line 68, in infer
+    model.load_from_checkpoint(cfg.ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/module.py", line 1531, in load_from_checkpoint
+    loaded = _load_from_checkpoint(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 90, in _load_from_checkpoint
+    return _load_state(cls, checkpoint, strict=strict, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 136, in _load_state
+    obj = cls(**_cls_kwargs)
+TypeError: __init__() missing 4 required positional arguments: 'optimizer', 'scheduler', 'input_dim', and 'latent_dim'
+[2023-05-09 15:07:00,032][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-09_15-06-59
+[2023-05-09 15:07:54,086][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 15:07:54,090][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 15:07:54,090][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-09 15:07:54,090][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-05-09 15:07:54,115][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 15:07:54,117][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-09 15:07:54,122][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 15:07:54,178][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/infer.py", line 68, in infer
+    model.load_from_checkpoint(cfg.ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/module.py", line 1531, in load_from_checkpoint
+    loaded = _load_from_checkpoint(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 90, in _load_from_checkpoint
+    return _load_state(cls, checkpoint, strict=strict, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 136, in _load_state
+    obj = cls(**_cls_kwargs)
+TypeError: __init__() missing 4 required positional arguments: 'optimizer', 'scheduler', 'input_dim', and 'latent_dim'
+[2023-05-09 15:07:54,179][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-09_15-07-54
+[2023-05-09 15:12:04,542][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 15:12:04,546][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 15:12:04,546][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-09 15:12:04,546][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-05-09 15:12:04,568][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 15:12:04,571][__main__][INFO] - Instantiating model <src.models.old_vae.VAE>
+[2023-05-09 15:12:04,573][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 15:12:04,623][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/infer.py", line 68, in infer
+    model.load_from_checkpoint(cfg.ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/module.py", line 1531, in load_from_checkpoint
+    loaded = _load_from_checkpoint(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 90, in _load_from_checkpoint
+    return _load_state(cls, checkpoint, strict=strict, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 136, in _load_state
+    obj = cls(**_cls_kwargs)
+TypeError: __init__() missing 2 required positional arguments: 'input_dim' and 'latent_dim'
+[2023-05-09 15:12:04,623][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-09_15-12-04
+[2023-05-09 15:26:15,851][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 15:26:15,855][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 15:26:15,855][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-09 15:26:15,855][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-05-09 15:26:15,878][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 15:26:15,880][__main__][INFO] - Instantiating model <src.models.old_vae.VAE>
+[2023-05-09 15:26:15,883][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 15:26:15,930][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/infer.py", line 68, in infer
+    model.load_from_checkpoint(cfg.ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/module.py", line 1531, in load_from_checkpoint
+    loaded = _load_from_checkpoint(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 90, in _load_from_checkpoint
+    return _load_state(cls, checkpoint, strict=strict, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 136, in _load_state
+    obj = cls(**_cls_kwargs)
+TypeError: __init__() missing 2 required positional arguments: 'input_dim' and 'latent_dim'
+[2023-05-09 15:26:15,931][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-09_15-26-15
+[2023-05-09 15:26:43,023][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 15:26:43,027][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 15:26:43,027][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-09 15:26:43,027][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-05-09 15:26:43,049][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 15:26:43,051][__main__][INFO] - Instantiating model <src.models.old_vae.VAE>
+[2023-05-09 15:26:43,054][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 15:26:43,098][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/infer.py", line 68, in infer
+    model.load_from_checkpoint(cfg.ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/module.py", line 1531, in load_from_checkpoint
+    loaded = _load_from_checkpoint(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 62, in _load_from_checkpoint
+    checkpoint = pl_load(checkpoint_path, map_location=map_location)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/fabric/utilities/cloud_io.py", line 50, in _load
+    with fs.open(path_or_url, "rb") as f:
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/fsspec/spec.py", line 1154, in open
+    f = self._open(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/fsspec/implementations/local.py", line 183, in _open
+    return LocalFileOpener(path, mode, fs=self, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/fsspec/implementations/local.py", line 287, in __init__
+    self._open()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/fsspec/implementations/local.py", line 292, in _open
+    self.f = open(self.path, mode=self.mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kinetix/Documents/Hydra/lightning-hydra-template/logs//train/runs/2023-05-09_15-15-49/checkpoints/lastt.ckpt'
+[2023-05-09 15:26:43,107][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-09_15-26-42
+[2023-05-09 16:06:58,832][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 16:06:58,836][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 16:06:58,836][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-09 16:06:58,836][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-05-09 16:06:58,858][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 16:06:58,860][__main__][INFO] - Instantiating model <src.models.beta_vae_module_debug.beta_VAEModule>
+[2023-05-09 16:06:58,865][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 16:06:58,916][__main__][INFO] - Starting inference!
+[2023-05-09 16:07:15,046][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-09_16-06-58
+[2023-05-09 16:36:59,478][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 16:36:59,482][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 16:36:59,482][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-09 16:36:59,482][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-05-09 16:36:59,505][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 16:36:59,508][__main__][INFO] - Instantiating model <src.models.beta_vae_module_debug.beta_VAEModule>
+[2023-05-09 16:36:59,512][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 16:36:59,563][__main__][INFO] - Starting inference!
+[2023-05-09 16:37:15,738][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-09_16-36-59
+[2023-05-09 17:37:40,371][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 17:37:40,375][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 17:37:40,376][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-09 17:37:40,376][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-05-09 17:37:40,401][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 17:37:40,403][__main__][INFO] - Instantiating model <src.models.beta_vae_module_debug.beta_VAEModule>
+[2023-05-09 17:37:40,408][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 17:37:40,462][__main__][INFO] - Starting inference!
+[2023-05-09 17:39:00,892][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-09_17-37-40
+[2023-05-09 17:59:35,763][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 17:59:35,767][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 17:59:35,768][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-09 17:59:35,768][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-05-09 17:59:35,795][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 17:59:35,798][__main__][INFO] - Instantiating model <src.models.beta_vae_module_debug.beta_VAEModule>
+[2023-05-09 17:59:35,803][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 17:59:35,865][__main__][INFO] - Starting inference!
+[2023-05-09 18:01:01,641][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-09_17-59-35
+[2023-05-09 18:10:14,855][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 18:10:14,860][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 18:10:14,860][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-09 18:10:14,860][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-05-09 18:10:14,886][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 18:10:14,889][__main__][INFO] - Instantiating model <src.models.beta_vae_module_debug.beta_VAEModule>
+[2023-05-09 18:10:14,896][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/infer.py", line 55, in infer
+    model = LightningModule.load_from_checkpoint(cfg.ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/module.py", line 1531, in load_from_checkpoint
+    loaded = _load_from_checkpoint(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 90, in _load_from_checkpoint
+    return _load_state(cls, checkpoint, strict=strict, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 136, in _load_state
+    obj = cls(**_cls_kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/module.py", line 116, in __init__
+    super().__init__(*args, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'input_dim'
+[2023-05-09 18:10:14,897][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-09_18-10-14
+[2023-05-09 18:14:03,826][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 18:14:03,830][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 18:14:03,830][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-09 18:14:03,830][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-05-09 18:14:03,856][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 18:14:03,858][__main__][INFO] - Instantiating model <src.models.beta_vae_module_debug.beta_VAEModule>
+[2023-05-09 18:14:03,864][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/infer.py", line 55, in infer
+    model = LightningModule.load_from_checkpoint(checkpoint_path = cfg.ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/module.py", line 1531, in load_from_checkpoint
+    loaded = _load_from_checkpoint(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 90, in _load_from_checkpoint
+    return _load_state(cls, checkpoint, strict=strict, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/saving.py", line 136, in _load_state
+    obj = cls(**_cls_kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/core/module.py", line 116, in __init__
+    super().__init__(*args, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'input_dim'
+[2023-05-09 18:14:03,865][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-09_18-14-03
+[2023-05-09 18:39:37,719][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 18:39:37,723][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 18:39:37,723][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-09 18:39:37,724][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-05-09 18:39:37,751][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 18:39:37,753][__main__][INFO] - Instantiating model <src.models.beta_vae_module_debug.beta_VAEModule>
+[2023-05-09 18:39:37,765][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 18:39:37,815][__main__][INFO] - Starting inference!
+[2023-05-09 18:41:02,092][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-09_18-39-37
+[2023-05-09 18:42:47,712][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 18:42:47,717][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 18:42:47,717][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-09 18:42:47,717][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-05-09 18:42:47,745][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 18:42:47,749][__main__][INFO] - Instantiating model <src.models.beta_vae_module_debug.beta_VAEModule>
+[2023-05-09 18:42:47,762][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 18:42:47,808][__main__][INFO] - Starting inference!
+[2023-05-09 18:44:22,691][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-09_18-42-47
+[2023-05-11 10:27:27,246][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-11 10:27:27,250][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-11 10:27:27,250][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-11 10:27:27,250][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-05-11 10:27:27,272][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-11 10:27:27,274][__main__][INFO] - Instantiating model <src.models.beta_vae_module_debug.beta_VAEModule>
+[2023-05-11 10:27:27,294][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-11 10:27:27,340][__main__][INFO] - Starting inference!
+[2023-05-11 10:27:28,078][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/infer.py", line 88, in infer
+    prediction = trainer.predict(model, dataloaders=(datamodule.train_dataloader(shuffle=False), datamodule.check_dataloader()))
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 805, in predict
+    return call._call_and_handle_interrupt(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 847, in _predict_impl
+    results = self._run(model, ckpt_path=ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 911, in _run
+    self.strategy.setup(self)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/strategies/single_device.py", line 73, in setup
+    self.model_to_device()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/strategies/single_device.py", line 70, in model_to_device
+    self.model.to(self.root_device)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/fabric/utilities/device_dtype_mixin.py", line 54, in to
+    return super().to(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1145, in to
+    return self._apply(convert)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 797, in _apply
+    module._apply(fn)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 797, in _apply
+    module._apply(fn)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 820, in _apply
+    param_applied = fn(param)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1143, in convert
+    return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)
+RuntimeError: CUDA error: CUDA-capable device(s) is/are busy or unavailable
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[2023-05-11 10:27:28,081][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-11_10-27-27
+[2023-05-11 10:28:30,860][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-11 10:28:30,864][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-11 10:28:30,864][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-05-11 10:28:30,864][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-05-11 10:28:30,886][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-11 10:28:30,889][__main__][INFO] - Instantiating model <src.models.beta_vae_module_debug.beta_VAEModule>
+[2023-05-11 10:28:30,908][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-11 10:28:32,106][__main__][INFO] - Starting inference!
+[2023-05-11 10:28:58,058][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-11_10-28-30

@@ -1,0 +1,22 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+      {"name":"Python: Current File","type":"python","request":"launch","program":"${file}","console":"integratedTerminal","justMyCode":true},
+
+        {
+            "name": "Python: train with experiment",
+            "type": "python",
+            "request": "launch",
+            //"program": "src/train.py",
+            //"program": "src/random_walk_mvae_integrate.py",
+            "program": "src/visualize_random_walk_2.py",
+            "args": "+experiment=locomotion_mvae_root_space_base_moe_ss_bis_linear_lr +reconstruct_index=60000",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }, 
+
+    ]
+}

@@ -1,0 +1,1798 @@
+[2023-04-26 18:56:49,138][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-04-26 18:56:49,141][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-04-26 18:56:49,141][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-04-26 18:56:49,174][__main__][INFO] - Instantiating datamodule <src.data.mnist_datamodule.MNISTDataModule>
+[2023-04-26 18:56:49,177][__main__][INFO] - Instantiating model <src.models.mnist_module.MNISTLitModule>
+[2023-04-26 18:56:49,180][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 92, in _call_target
+    return _target_(*args, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'new_param'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 57, in train
+    model: LightningModule = hydra.utils.instantiate(cfg.model)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 347, in instantiate_node
+    return _call_target(_target_, partial, args, kwargs, full_key)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 97, in _call_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error in call to target 'src.models.mnist_module.MNISTLitModule':
+TypeError("__init__() got an unexpected keyword argument 'new_param'")
+full_key: model
+[2023-04-26 18:56:49,181][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-04-26_18-56-49
+[2023-04-26 19:04:52,271][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-04-26 19:04:52,275][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-04-26 19:04:52,317][__main__][INFO] - Instantiating datamodule <src.data.mnist_datamodule.MNISTDataModule>
+[2023-04-26 19:04:52,320][__main__][INFO] - Instantiating model <src.models.mnist_module.MNISTLitModule>
+[2023-04-26 19:04:52,327][__main__][INFO] - Instantiating callbacks...
+[2023-04-26 19:04:52,328][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-04-26 19:04:52,330][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-04-26 19:04:52,331][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-04-26 19:04:52,331][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-04-26 19:04:52,332][__main__][INFO] - Instantiating loggers...
+[2023-04-26 19:04:52,332][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-04-26 19:04:55,751][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-04-26 19:04:55,793][__main__][INFO] - Logging hyperparameters!
+[2023-04-26 19:04:55,802][__main__][INFO] - Starting training!
+[2023-04-26 19:05:37,710][__main__][INFO] - Starting testing!
+[2023-04-26 19:05:38,398][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-04-26_19-04-52/checkpoints/epoch_004.ckpt
+[2023-04-26 19:05:38,400][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-04-26_19-04-52
+[2023-04-26 19:05:38,400][src.utils.utils][INFO] - Closing wandb!
+[2023-04-26 19:05:49,666][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-04-28 10:42:35,884][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-04-28 10:42:35,888][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-04-28 10:42:35,923][__main__][INFO] - Instantiating datamodule <src.data.mnist_datamodule.MNISTDataModule>
+[2023-04-28 10:42:35,926][__main__][INFO] - Instantiating model <src.models.mnist_module.MNISTLitModule>
+[2023-04-28 10:42:35,941][__main__][INFO] - Instantiating callbacks...
+[2023-04-28 10:42:35,941][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-04-28 10:42:35,943][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-04-28 10:42:35,944][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-04-28 10:42:35,945][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-04-28 10:42:35,945][__main__][INFO] - Instantiating loggers...
+[2023-04-28 10:42:35,945][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-04-28 10:42:41,163][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-04-28 10:42:41,211][__main__][INFO] - Logging hyperparameters!
+[2023-04-28 10:42:41,220][__main__][INFO] - Starting training!
+[2023-04-28 10:43:17,694][__main__][INFO] - Starting testing!
+[2023-04-28 10:43:18,281][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-04-28_10-42-35/checkpoints/epoch_004.ckpt
+[2023-04-28 10:43:18,283][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-04-28_10-42-35
+[2023-04-28 10:43:18,283][src.utils.utils][INFO] - Closing wandb!
+[2023-04-28 10:43:27,497][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-02 11:50:25,873][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 11:50:25,877][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 11:50:25,913][__main__][INFO] - Instantiating datamodule <src.data.mnist_datamodule.MNISTDataModule>
+[2023-05-02 11:50:25,915][__main__][INFO] - Instantiating model <src.models.mnist_module.MNISTLitModule>
+[2023-05-02 11:50:25,938][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 11:50:25,938][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 11:50:25,940][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 11:50:25,941][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 11:50:25,941][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 11:50:25,942][__main__][INFO] - Instantiating loggers...
+[2023-05-02 11:50:25,942][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 11:50:31,827][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 11:50:31,875][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 11:50:31,880][__main__][INFO] - Starting training!
+[2023-05-02 11:51:08,306][__main__][INFO] - Starting testing!
+[2023-05-02 11:51:08,882][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_11-50-25/checkpoints/epoch_008.ckpt
+[2023-05-02 11:51:08,883][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_11-50-25
+[2023-05-02 11:51:08,883][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 11:51:19,267][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-02 11:53:39,041][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 11:53:39,045][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 11:53:39,081][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LafanDataModule>
+[2023-05-02 11:53:39,083][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/utils.py", line 644, in _locate
+    obj = getattr(obj, part)
+AttributeError: module 'src.data' has no attribute 'lafan_pose_datamodule'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/utils.py", line 650, in _locate
+    obj = import_module(mod)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'src.data.lafan_pose_datamodule'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 134, in _resolve_target
+    target = _locate(target)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/utils.py", line 653, in _locate
+    raise ImportError(
+ImportError: Error loading 'src.data.lafan_pose_datamodule.LafanDataModule':
+ModuleNotFoundError("No module named 'src.data.lafan_pose_datamodule'")
+Are you sure that 'lafan_pose_datamodule' is importable from module 'src.data'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 54, in train
+    datamodule: LightningDataModule = hydra.utils.instantiate(cfg.data)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 333, in instantiate_node
+    _target_ = _resolve_target(node.get(_Keys.TARGET), full_key)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 139, in _resolve_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error locating target 'src.data.lafan_pose_datamodule.LafanDataModule', set env var HYDRA_FULL_ERROR=1 to see chained exception.
+full_key: data
+[2023-05-02 11:53:39,083][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_11-53-38
+[2023-05-02 11:55:19,917][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 11:55:19,921][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 11:55:19,957][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 11:55:19,959][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/utils.py", line 644, in _locate
+    obj = getattr(obj, part)
+AttributeError: module 'src.data' has no attribute 'lafan_pose_datamodule'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/utils.py", line 650, in _locate
+    obj = import_module(mod)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/data/lafan_pose_datamodule.py", line 7, in <module>
+    from LAFAN_axisa_notranslation_ngram import PoseSequenceDataset
+ModuleNotFoundError: No module named 'LAFAN_axisa_notranslation_ngram'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 134, in _resolve_target
+    target = _locate(target)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/utils.py", line 653, in _locate
+    raise ImportError(
+ImportError: Error loading 'src.data.lafan_pose_datamodule.LAFANDataModule':
+ModuleNotFoundError("No module named 'LAFAN_axisa_notranslation_ngram'")
+Are you sure that 'lafan_pose_datamodule' is importable from module 'src.data'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 54, in train
+    datamodule: LightningDataModule = hydra.utils.instantiate(cfg.data)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 333, in instantiate_node
+    _target_ = _resolve_target(node.get(_Keys.TARGET), full_key)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 139, in _resolve_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error locating target 'src.data.lafan_pose_datamodule.LAFANDataModule', set env var HYDRA_FULL_ERROR=1 to see chained exception.
+full_key: data
+[2023-05-02 11:55:19,960][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_11-55-19
+[2023-05-02 11:59:02,177][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 11:59:02,180][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 11:59:02,217][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 11:59:02,220][__main__][INFO] - Instantiating model <src.models.mnist_module.MNISTLitModule>
+[2023-05-02 11:59:02,226][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 11:59:02,226][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 11:59:02,228][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 11:59:02,229][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 11:59:02,230][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 11:59:02,230][__main__][INFO] - Instantiating loggers...
+[2023-05-02 11:59:02,230][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 11:59:07,472][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 11:59:07,515][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 11:59:07,520][__main__][INFO] - Starting training!
+[2023-05-02 11:59:08,050][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 87, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 520, in fit
+    call._call_and_handle_interrupt(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 559, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 896, in _run
+    call._call_setup_hook(self)  # allow user to setup lightning_module in accelerator environment
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 81, in _call_setup_hook
+    _call_lightning_datamodule_hook(trainer, "setup", stage=fn)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 162, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/data/lafan_pose_datamodule.py", line 109, in setup
+    self.data_val, self.data_test = random_split(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/utils/data/dataset.py", line 353, in random_split
+    raise ValueError("Sum of input lengths does not equal the length of the input dataset!")
+ValueError: Sum of input lengths does not equal the length of the input dataset!
+[2023-05-02 11:59:08,051][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_11-59-02
+[2023-05-02 11:59:08,051][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 13:50:07,757][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 13:50:07,760][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 13:50:07,794][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 13:50:07,796][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 13:50:07,798][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 92, in _call_target
+    return _target_(*args, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'optimizer'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 57, in train
+    model: LightningModule = hydra.utils.instantiate(cfg.model)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 347, in instantiate_node
+    return _call_target(_target_, partial, args, kwargs, full_key)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 97, in _call_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error in call to target 'src.models.beta_vae_module.beta_VAEModule':
+TypeError("__init__() got an unexpected keyword argument 'optimizer'")
+full_key: model
+[2023-05-02 13:50:07,799][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_13-50-07
+[2023-05-02 13:54:10,440][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 13:54:10,443][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 13:54:10,476][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 13:54:10,478][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 13:54:10,479][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 92, in _call_target
+    return _target_(*args, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'beta'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 57, in train
+    model: LightningModule = hydra.utils.instantiate(cfg.model)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 347, in instantiate_node
+    return _call_target(_target_, partial, args, kwargs, full_key)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 97, in _call_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error in call to target 'src.models.beta_vae_module.beta_VAEModule':
+TypeError("__init__() got an unexpected keyword argument 'beta'")
+full_key: model
+[2023-05-02 13:54:10,479][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_13-54-10
+[2023-05-02 13:54:45,960][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 13:54:45,964][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 13:54:45,997][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 13:54:45,999][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 13:54:46,001][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 13:54:46,002][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 13:54:46,003][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 13:54:46,004][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 13:54:46,005][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 13:54:46,005][__main__][INFO] - Instantiating loggers...
+[2023-05-02 13:54:46,005][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 13:54:50,684][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 13:54:50,730][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 13:54:50,734][__main__][INFO] - Starting training!
+[2023-05-02 13:54:50,816][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 87, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 518, in fit
+    model = _maybe_unwrap_optimized(model)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/utilities/compile.py", line 125, in _maybe_unwrap_optimized
+    raise TypeError(
+TypeError: `model` must be a `LightningModule` or `torch._dynamo.OptimizedModule`, got `beta_VAEModule`
+[2023-05-02 13:54:50,818][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_13-54-45
+[2023-05-02 13:54:50,818][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 14:06:55,387][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 14:06:55,392][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 14:06:55,433][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 14:06:55,435][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 14:06:55,440][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 14:06:55,440][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 14:06:55,442][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 14:06:55,443][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 14:06:55,444][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 14:06:55,444][__main__][INFO] - Instantiating loggers...
+[2023-05-02 14:06:55,444][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 14:07:00,465][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 14:07:00,508][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 14:07:00,513][__main__][INFO] - Starting training!
+[2023-05-02 14:07:00,602][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 87, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 518, in fit
+    model = _maybe_unwrap_optimized(model)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/utilities/compile.py", line 125, in _maybe_unwrap_optimized
+    raise TypeError(
+TypeError: `model` must be a `LightningModule` or `torch._dynamo.OptimizedModule`, got `beta_VAEModule`
+[2023-05-02 14:07:00,603][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_14-06-55
+[2023-05-02 14:07:00,604][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 14:12:33,736][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 14:12:33,739][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 14:12:33,774][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 14:12:33,776][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 14:12:33,780][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 14:12:33,780][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 14:12:33,782][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 14:12:33,782][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 14:12:33,783][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 14:12:33,783][__main__][INFO] - Instantiating loggers...
+[2023-05-02 14:12:33,783][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 14:12:38,425][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 14:12:38,468][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 14:12:38,473][__main__][INFO] - Starting training!
+[2023-05-02 14:12:38,558][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 87, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 518, in fit
+    model = _maybe_unwrap_optimized(model)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/utilities/compile.py", line 125, in _maybe_unwrap_optimized
+    raise TypeError(
+TypeError: `model` must be a `LightningModule` or `torch._dynamo.OptimizedModule`, got `beta_VAEModule`
+[2023-05-02 14:12:38,560][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_14-12-33
+[2023-05-02 14:12:38,560][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 14:14:35,021][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 14:14:35,025][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 14:14:35,060][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 14:14:35,062][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 14:14:35,066][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 14:14:35,066][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 14:14:35,068][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 14:14:35,069][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 14:14:35,069][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 14:14:35,070][__main__][INFO] - Instantiating loggers...
+[2023-05-02 14:14:35,070][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 14:14:39,999][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 14:14:40,043][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 14:14:40,047][__main__][INFO] - Starting training!
+[2023-05-02 14:14:40,444][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 87, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 520, in fit
+    call._call_and_handle_interrupt(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 559, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 896, in _run
+    call._call_setup_hook(self)  # allow user to setup lightning_module in accelerator environment
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 81, in _call_setup_hook
+    _call_lightning_datamodule_hook(trainer, "setup", stage=fn)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 162, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/data/lafan_pose_datamodule.py", line 109, in setup
+    self.data_val, self.data_test = random_split(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/utils/data/dataset.py", line 353, in random_split
+    raise ValueError("Sum of input lengths does not equal the length of the input dataset!")
+ValueError: Sum of input lengths does not equal the length of the input dataset!
+[2023-05-02 14:14:40,445][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_14-14-34
+[2023-05-02 14:14:40,446][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 14:20:41,228][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 14:20:41,232][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 14:20:41,269][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 14:20:41,272][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 14:20:41,275][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 14:20:41,275][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 14:20:41,277][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 14:20:41,278][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 14:20:41,278][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 14:20:41,278][__main__][INFO] - Instantiating loggers...
+[2023-05-02 14:20:41,279][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 14:20:46,587][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 14:20:46,629][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 14:20:46,634][__main__][INFO] - Starting training!
+[2023-05-02 14:21:44,874][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 87, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 520, in fit
+    call._call_and_handle_interrupt(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 559, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 935, in _run
+    results = self._run_stage()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 978, in _run_stage
+    self.fit_loop.run()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/loops/fit_loop.py", line 202, in run
+    self.on_advance_end()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/loops/fit_loop.py", line 369, in on_advance_end
+    call._call_callback_hooks(trainer, "on_train_epoch_end", monitoring_callbacks=True)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 190, in _call_callback_hooks
+    fn(trainer, trainer.lightning_module, *args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/callbacks/early_stopping.py", line 184, in on_train_epoch_end
+    self._run_early_stopping_check(trainer)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/callbacks/early_stopping.py", line 195, in _run_early_stopping_check
+    if trainer.fast_dev_run or not self._validate_condition_metric(  # disable early_stopping with fast_dev_run
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/callbacks/early_stopping.py", line 150, in _validate_condition_metric
+    raise RuntimeError(error_msg)
+RuntimeError: Early stopping conditioned on metric `val/acc` which is not available. Pass in or modify your `EarlyStopping` callback to use any of the following: `train reconstruction loss`, `train KL divergence`, `train loss`, `val mse`, `val KL divergence`, `val loss`
+[2023-05-02 14:21:44,876][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_14-20-41
+[2023-05-02 14:21:44,876][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 14:56:15,698][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 14:56:15,702][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 14:56:15,737][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 14:56:15,739][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 14:56:15,742][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 14:56:15,742][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 14:56:15,744][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 14:56:15,745][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 14:56:15,745][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 14:56:15,745][__main__][INFO] - Instantiating loggers...
+[2023-05-02 14:56:15,746][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 14:56:20,470][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 14:56:20,512][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 14:56:20,516][__main__][INFO] - Starting training!
+[2023-05-02 14:57:14,563][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 87, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 520, in fit
+    call._call_and_handle_interrupt(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 559, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 935, in _run
+    results = self._run_stage()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 978, in _run_stage
+    self.fit_loop.run()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/loops/fit_loop.py", line 202, in run
+    self.on_advance_end()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/loops/fit_loop.py", line 369, in on_advance_end
+    call._call_callback_hooks(trainer, "on_train_epoch_end", monitoring_callbacks=True)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 190, in _call_callback_hooks
+    fn(trainer, trainer.lightning_module, *args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/callbacks/early_stopping.py", line 184, in on_train_epoch_end
+    self._run_early_stopping_check(trainer)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/callbacks/early_stopping.py", line 195, in _run_early_stopping_check
+    if trainer.fast_dev_run or not self._validate_condition_metric(  # disable early_stopping with fast_dev_run
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/callbacks/early_stopping.py", line 150, in _validate_condition_metric
+    raise RuntimeError(error_msg)
+RuntimeError: Early stopping conditioned on metric `val/acc` which is not available. Pass in or modify your `EarlyStopping` callback to use any of the following: `train reconstruction loss`, `train KL divergence`, `train loss`, `val mse`, `val KL divergence`, `val loss`
+[2023-05-02 14:57:14,565][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_14-56-15
+[2023-05-02 14:57:14,565][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 15:11:09,892][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 15:11:09,895][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 15:11:09,931][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 15:11:09,933][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 15:11:09,934][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/utils.py", line 644, in _locate
+    obj = getattr(obj, part)
+AttributeError: module 'src.models' has no attribute 'beta_vae_module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/utils.py", line 650, in _locate
+    obj = import_module(mod)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/models/beta_vae_module.py", line 10, in <module>
+    class beta_VAEModule(LightningModule):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/models/beta_vae_module.py", line 122, in beta_VAEModule
+    def test_step(self, batch: Any, batch_idx: int):
+NameError: name 'Any' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 134, in _resolve_target
+    target = _locate(target)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/utils.py", line 658, in _locate
+    raise ImportError(
+ImportError: Error loading 'src.models.beta_vae_module.beta_VAEModule':
+NameError("name 'Any' is not defined")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 57, in train
+    model: LightningModule = hydra.utils.instantiate(cfg.model)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 333, in instantiate_node
+    _target_ = _resolve_target(node.get(_Keys.TARGET), full_key)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 139, in _resolve_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error locating target 'src.models.beta_vae_module.beta_VAEModule', set env var HYDRA_FULL_ERROR=1 to see chained exception.
+full_key: model
+[2023-05-02 15:11:09,935][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_15-11-09
+[2023-05-02 15:11:27,097][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 15:11:27,100][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 15:11:27,136][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 15:11:27,138][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 15:11:27,139][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/utils.py", line 644, in _locate
+    obj = getattr(obj, part)
+AttributeError: module 'src.models' has no attribute 'beta_vae_module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/utils.py", line 650, in _locate
+    obj = import_module(mod)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/models/beta_vae_module.py", line 10, in <module>
+    class beta_VAEModule(LightningModule):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/models/beta_vae_module.py", line 122, in beta_VAEModule
+    def test_step(self, batch: Any, batch_idx: int):
+NameError: name 'Any' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 134, in _resolve_target
+    target = _locate(target)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/utils.py", line 658, in _locate
+    raise ImportError(
+ImportError: Error loading 'src.models.beta_vae_module.beta_VAEModule':
+NameError("name 'Any' is not defined")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 57, in train
+    model: LightningModule = hydra.utils.instantiate(cfg.model)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 333, in instantiate_node
+    _target_ = _resolve_target(node.get(_Keys.TARGET), full_key)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 139, in _resolve_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error locating target 'src.models.beta_vae_module.beta_VAEModule', set env var HYDRA_FULL_ERROR=1 to see chained exception.
+full_key: model
+[2023-05-02 15:11:27,140][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_15-11-27
+[2023-05-02 15:14:02,602][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 15:14:02,606][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 15:14:02,641][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 15:14:02,643][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 15:14:02,647][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 15:14:02,648][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 15:14:02,649][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 15:14:02,650][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 15:14:02,650][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 15:14:02,651][__main__][INFO] - Instantiating loggers...
+[2023-05-02 15:14:02,651][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 15:14:07,469][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 15:14:07,510][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 15:14:07,515][__main__][INFO] - Starting training!
+[2023-05-02 15:15:06,310][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 87, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 520, in fit
+    call._call_and_handle_interrupt(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 559, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 935, in _run
+    results = self._run_stage()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 978, in _run_stage
+    self.fit_loop.run()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/loops/fit_loop.py", line 202, in run
+    self.on_advance_end()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/loops/fit_loop.py", line 369, in on_advance_end
+    call._call_callback_hooks(trainer, "on_train_epoch_end", monitoring_callbacks=True)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 190, in _call_callback_hooks
+    fn(trainer, trainer.lightning_module, *args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/callbacks/early_stopping.py", line 184, in on_train_epoch_end
+    self._run_early_stopping_check(trainer)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/callbacks/early_stopping.py", line 195, in _run_early_stopping_check
+    if trainer.fast_dev_run or not self._validate_condition_metric(  # disable early_stopping with fast_dev_run
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/callbacks/early_stopping.py", line 150, in _validate_condition_metric
+    raise RuntimeError(error_msg)
+RuntimeError: Early stopping conditioned on metric `val/acc` which is not available. Pass in or modify your `EarlyStopping` callback to use any of the following: `train reconstruction loss`, `train KL divergence`, `train loss`, `val mse`, `val KL divergence`, `val loss`, `val/loss`, `train/loss`
+[2023-05-02 15:15:06,312][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_15-14-02
+[2023-05-02 15:15:06,312][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 15:19:37,785][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 15:19:37,789][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 15:19:37,824][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 15:19:37,827][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 15:19:37,830][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 15:19:37,830][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 15:19:37,832][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 15:19:37,833][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 15:19:37,833][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 15:19:37,834][__main__][INFO] - Instantiating loggers...
+[2023-05-02 15:19:37,834][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 15:19:42,080][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_15-19-37
+[2023-05-02 15:19:54,361][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 15:19:54,364][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 15:19:54,400][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 15:19:54,402][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 15:19:54,405][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 15:19:54,406][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 15:19:54,407][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 15:19:54,408][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 15:19:54,409][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 15:19:54,409][__main__][INFO] - Instantiating loggers...
+[2023-05-02 15:19:54,409][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 15:19:59,364][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 15:19:59,406][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 15:19:59,411][__main__][INFO] - Starting training!
+[2023-05-02 15:23:51,165][__main__][INFO] - Starting testing!
+[2023-05-02 15:23:52,908][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_15-19-54/checkpoints/epoch_002.ckpt
+[2023-05-02 15:23:52,909][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_15-19-54
+[2023-05-02 15:23:52,909][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 15:24:01,084][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-02 15:38:44,217][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 15:38:44,220][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 15:38:44,258][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 15:38:44,260][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 15:38:44,263][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 15:38:44,263][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 15:38:44,265][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 15:38:44,266][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 15:38:44,266][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 15:38:44,267][__main__][INFO] - Instantiating loggers...
+[2023-05-02 15:38:44,267][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 15:38:49,187][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 15:38:49,220][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 92, in _call_target
+    return _target_(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/utilities/argparse.py", line 69, in insert_env_defaults
+    return fn(self, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 393, in __init__
+    self._accelerator_connector = _AcceleratorConnector(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/connectors/accelerator_connector.py", line 157, in __init__
+    self._set_parallel_devices_and_init_accelerator()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/connectors/accelerator_connector.py", line 394, in _set_parallel_devices_and_init_accelerator
+    self._devices_flag = accelerator_cls.parse_devices(self._devices_flag)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/accelerators/cuda.py", line 80, in parse_devices
+    return _parse_gpu_ids(devices, include_cuda=True)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/fabric/utilities/device_parser.py", line 104, in _parse_gpu_ids
+    return _sanitize_gpu_ids(gpus, include_cuda=include_cuda, include_mps=include_mps)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/fabric/utilities/device_parser.py", line 136, in _sanitize_gpu_ids
+    raise MisconfigurationException(
+lightning.fabric.utilities.exceptions.MisconfigurationException: You requested gpu: [0, 1, 2, 3]
+ But your machine only has: [0]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 66, in train
+    trainer: Trainer = hydra.utils.instantiate(cfg.trainer, callbacks=callbacks, logger=logger)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 347, in instantiate_node
+    return _call_target(_target_, partial, args, kwargs, full_key)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 97, in _call_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error in call to target 'lightning.pytorch.trainer.trainer.Trainer':
+MisconfigurationException('You requested gpu: [0, 1, 2, 3]\n But your machine only has: [0]')
+full_key: trainer
+[2023-05-02 15:38:49,222][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_15-38-44
+[2023-05-02 15:38:49,222][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 15:40:20,078][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 15:40:20,081][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 15:40:20,118][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 15:40:20,120][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 15:40:20,124][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 15:40:20,124][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 15:40:20,126][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 15:40:20,127][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 15:40:20,127][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 15:40:20,128][__main__][INFO] - Instantiating loggers...
+[2023-05-02 15:40:20,128][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 15:40:24,937][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 15:40:24,972][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 92, in _call_target
+    return _target_(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/utilities/argparse.py", line 69, in insert_env_defaults
+    return fn(self, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 393, in __init__
+    self._accelerator_connector = _AcceleratorConnector(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/connectors/accelerator_connector.py", line 157, in __init__
+    self._set_parallel_devices_and_init_accelerator()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/connectors/accelerator_connector.py", line 394, in _set_parallel_devices_and_init_accelerator
+    self._devices_flag = accelerator_cls.parse_devices(self._devices_flag)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/accelerators/cuda.py", line 80, in parse_devices
+    return _parse_gpu_ids(devices, include_cuda=True)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/fabric/utilities/device_parser.py", line 104, in _parse_gpu_ids
+    return _sanitize_gpu_ids(gpus, include_cuda=include_cuda, include_mps=include_mps)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/fabric/utilities/device_parser.py", line 136, in _sanitize_gpu_ids
+    raise MisconfigurationException(
+lightning.fabric.utilities.exceptions.MisconfigurationException: You requested gpu: [0, 1, 2, 3]
+ But your machine only has: [0]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 66, in train
+    trainer: Trainer = hydra.utils.instantiate(cfg.trainer, callbacks=callbacks, logger=logger)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 347, in instantiate_node
+    return _call_target(_target_, partial, args, kwargs, full_key)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 97, in _call_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error in call to target 'lightning.pytorch.trainer.trainer.Trainer':
+MisconfigurationException('You requested gpu: [0, 1, 2, 3]\n But your machine only has: [0]')
+full_key: trainer
+[2023-05-02 15:40:24,974][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_15-40-20
+[2023-05-02 15:40:24,974][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 15:41:32,121][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 15:41:32,124][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 15:41:32,162][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 15:41:32,164][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 15:41:32,168][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 15:41:32,168][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 15:41:32,170][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 15:41:32,170][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 15:41:32,171][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 15:41:32,171][__main__][INFO] - Instantiating loggers...
+[2023-05-02 15:41:32,171][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 15:41:36,913][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 15:41:36,942][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 92, in _call_target
+    return _target_(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/utilities/argparse.py", line 69, in insert_env_defaults
+    return fn(self, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 393, in __init__
+    self._accelerator_connector = _AcceleratorConnector(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/connectors/accelerator_connector.py", line 157, in __init__
+    self._set_parallel_devices_and_init_accelerator()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/connectors/accelerator_connector.py", line 394, in _set_parallel_devices_and_init_accelerator
+    self._devices_flag = accelerator_cls.parse_devices(self._devices_flag)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/accelerators/cuda.py", line 80, in parse_devices
+    return _parse_gpu_ids(devices, include_cuda=True)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/fabric/utilities/device_parser.py", line 104, in _parse_gpu_ids
+    return _sanitize_gpu_ids(gpus, include_cuda=include_cuda, include_mps=include_mps)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/fabric/utilities/device_parser.py", line 136, in _sanitize_gpu_ids
+    raise MisconfigurationException(
+lightning.fabric.utilities.exceptions.MisconfigurationException: You requested gpu: [0, 1, 2, 3]
+ But your machine only has: [0]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 66, in train
+    trainer: Trainer = hydra.utils.instantiate(cfg.trainer, callbacks=callbacks, logger=logger)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 347, in instantiate_node
+    return _call_target(_target_, partial, args, kwargs, full_key)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 97, in _call_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error in call to target 'lightning.pytorch.trainer.trainer.Trainer':
+MisconfigurationException('You requested gpu: [0, 1, 2, 3]\n But your machine only has: [0]')
+full_key: trainer
+[2023-05-02 15:41:36,944][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_15-41-32
+[2023-05-02 15:41:36,944][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 15:42:08,835][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 15:42:08,839][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 15:42:08,876][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 15:42:08,878][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 15:42:08,882][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 15:42:08,882][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 15:42:08,884][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 15:42:08,885][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 15:42:08,885][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 15:42:08,886][__main__][INFO] - Instantiating loggers...
+[2023-05-02 15:42:08,886][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 15:42:13,929][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 15:42:13,975][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 15:42:13,980][__main__][INFO] - Starting training!
+[2023-05-02 15:45:48,177][__main__][INFO] - Starting testing!
+[2023-05-02 15:45:49,182][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_15-42-08/checkpoints/epoch_005.ckpt
+[2023-05-02 15:45:49,183][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_15-42-08
+[2023-05-02 15:45:49,183][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 15:45:57,791][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-02 15:51:37,397][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 15:51:37,401][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 15:51:37,437][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 15:51:37,440][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 15:51:37,443][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 15:51:37,444][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 15:51:37,445][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 15:51:37,446][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 15:51:37,447][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 15:51:37,447][__main__][INFO] - Instantiating loggers...
+[2023-05-02 15:51:37,447][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 15:51:42,627][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 15:51:42,668][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 15:51:42,673][__main__][INFO] - Starting training!
+[2023-05-02 15:52:09,452][__main__][INFO] - Starting testing!
+[2023-05-02 15:52:09,452][__main__][WARNING] - Best ckpt not found! Using current weights for testing...
+[2023-05-02 15:52:09,826][__main__][INFO] - Best ckpt path: None
+[2023-05-02 15:52:09,828][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_15-51-37
+[2023-05-02 15:52:09,828][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 15:52:19,840][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-02 15:54:33,680][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 15:54:33,683][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 15:54:33,720][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 15:54:33,723][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 15:54:33,726][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 15:54:33,727][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 15:54:33,728][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 15:54:33,729][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 15:54:33,730][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 15:54:33,730][__main__][INFO] - Instantiating loggers...
+[2023-05-02 15:54:33,730][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 15:54:38,673][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 15:54:38,716][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 15:54:38,721][__main__][INFO] - Starting training!
+[2023-05-02 15:56:44,359][__main__][INFO] - Starting testing!
+[2023-05-02 15:56:45,386][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_15-54-33/checkpoints/epoch_002.ckpt
+[2023-05-02 15:56:45,387][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_15-54-33
+[2023-05-02 15:56:45,387][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 15:56:51,870][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-02 16:01:25,103][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 16:01:25,107][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 16:01:25,146][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 16:01:25,149][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 16:01:25,159][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 16:01:25,159][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 16:01:25,162][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 16:01:25,163][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 16:01:25,163][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 16:01:25,164][__main__][INFO] - Instantiating loggers...
+[2023-05-02 16:01:25,164][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 16:01:30,537][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 16:01:30,585][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 16:01:30,590][__main__][INFO] - Starting training!
+[2023-05-02 16:03:31,291][__main__][INFO] - Starting testing!
+[2023-05-02 16:03:32,257][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_16-01-25/checkpoints/epoch_002.ckpt
+[2023-05-02 16:03:32,258][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_16-01-25
+[2023-05-02 16:03:32,258][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 16:03:39,152][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-02 16:04:52,241][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 16:04:52,245][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 16:04:52,284][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 16:04:52,286][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 16:04:52,290][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 16:04:52,290][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 16:04:52,292][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 16:04:52,293][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 16:04:52,293][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 16:04:52,294][__main__][INFO] - Instantiating loggers...
+[2023-05-02 16:04:52,294][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 16:04:58,062][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 16:04:58,117][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 16:04:58,124][__main__][INFO] - Starting training!
+[2023-05-02 16:10:05,173][__main__][INFO] - Starting testing!
+[2023-05-02 16:10:06,197][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_16-04-52/checkpoints/epoch_007.ckpt
+[2023-05-02 16:10:06,198][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_16-04-52
+[2023-05-02 16:10:06,199][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 16:10:15,658][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-02 16:15:47,062][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 16:15:47,066][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 16:15:47,103][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 16:15:47,105][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 16:15:47,109][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 16:15:47,109][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 16:15:47,111][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 16:15:47,112][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 16:15:47,112][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 16:15:47,113][__main__][INFO] - Instantiating loggers...
+[2023-05-02 16:15:47,113][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 16:15:52,136][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 16:15:52,180][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 16:15:52,185][__main__][INFO] - Starting training!
+[2023-05-02 16:21:10,067][__main__][INFO] - Starting testing!
+[2023-05-02 16:21:11,057][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_16-15-47/checkpoints/epoch_009.ckpt
+[2023-05-02 16:21:11,058][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_16-15-47
+[2023-05-02 16:21:11,059][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 16:21:19,870][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-02 16:39:49,235][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 16:39:49,239][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 16:39:49,276][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 16:39:49,278][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 16:39:49,289][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 92, in _call_target
+    return _target_(*args, **kwargs)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/models/beta_vae_module.py", line 32, in __init__
+    nn.Linear(input_dim, 256),
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/nn/modules/linear.py", line 96, in __init__
+    self.weight = Parameter(torch.empty((out_features, in_features), **factory_kwargs))
+TypeError: empty(): argument 'size' must be tuple of ints, but found element of type NoneType at pos 2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 60, in train
+    model: LightningModule = hydra.utils.instantiate(cfg.model)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 347, in instantiate_node
+    return _call_target(_target_, partial, args, kwargs, full_key)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 97, in _call_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error in call to target 'src.models.beta_vae_module.beta_VAEModule':
+TypeError("empty(): argument 'size' must be tuple of ints, but found element of type NoneType at pos 2")
+full_key: model
+[2023-05-02 16:39:49,291][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_16-39-49
+[2023-05-02 16:49:27,148][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 16:49:27,152][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 16:49:27,194][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 16:49:27,196][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 16:49:27,199][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 92, in _call_target
+    return _target_(*args, **kwargs)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/models/beta_vae_module.py", line 32, in __init__
+    nn.Linear(input_dim, 256),
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/nn/modules/linear.py", line 96, in __init__
+    self.weight = Parameter(torch.empty((out_features, in_features), **factory_kwargs))
+TypeError: empty(): argument 'size' must be tuple of ints, but found element of type NoneType at pos 2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 60, in train
+    model: LightningModule = hydra.utils.instantiate(cfg.model)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 347, in instantiate_node
+    return _call_target(_target_, partial, args, kwargs, full_key)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 97, in _call_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error in call to target 'src.models.beta_vae_module.beta_VAEModule':
+TypeError("empty(): argument 'size' must be tuple of ints, but found element of type NoneType at pos 2")
+full_key: model
+[2023-05-02 16:49:27,200][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_16-49-27
+[2023-05-02 16:49:53,664][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 16:49:53,668][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 16:49:53,708][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 16:49:53,711][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 16:49:53,716][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 16:49:53,716][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 16:49:53,718][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 16:49:53,719][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 16:49:53,720][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 16:49:53,720][__main__][INFO] - Instantiating loggers...
+[2023-05-02 16:49:53,720][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 16:49:58,775][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 16:49:58,819][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 16:49:58,824][__main__][INFO] - Starting training!
+[2023-05-02 16:49:59,997][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 90, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 520, in fit
+    call._call_and_handle_interrupt(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 559, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 935, in _run
+    results = self._run_stage()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 976, in _run_stage
+    self._run_sanity_check()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 1005, in _run_sanity_check
+    val_loop.run()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/loops/utilities.py", line 177, in _decorator
+    return loop_run(self, *args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 115, in run
+    self._evaluation_step(batch, batch_idx, dataloader_idx)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 375, in _evaluation_step
+    output = call._call_strategy_hook(trainer, hook_name, *step_kwargs.values())
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 288, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/strategies/strategy.py", line 378, in validation_step
+    return self.model.validation_step(*args, **kwargs)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/models/beta_vae_module.py", line 112, in validation_step
+    x_hat, mu, log_var, x = self.forward(x)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/models/beta_vae_module.py", line 75, in forward
+    mu, log_var = self.encode(x)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/models/beta_vae_module.py", line 60, in encode
+    mu = self.mu(self.encoder(x))
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (128x144 and 150x256)
+[2023-05-02 16:50:00,002][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_16-49-53
+[2023-05-02 16:50:00,002][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 16:56:05,000][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 16:56:05,004][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 16:56:05,042][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 16:56:05,045][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 16:56:05,051][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 16:56:05,051][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 16:56:05,053][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 16:56:05,054][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 16:56:05,054][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 16:56:05,055][__main__][INFO] - Instantiating loggers...
+[2023-05-02 16:56:05,055][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 16:56:09,915][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 16:56:09,959][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 16:56:09,964][__main__][INFO] - Starting training!
+[2023-05-02 17:03:11,346][__main__][INFO] - Starting testing!
+[2023-05-02 17:03:12,765][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_16-56-04/checkpoints/epoch_009.ckpt
+[2023-05-02 17:03:12,766][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_16-56-04
+[2023-05-02 17:03:12,767][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 17:03:22,777][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-02 17:06:08,577][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 17:06:08,581][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 17:06:08,618][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 17:06:08,620][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 17:06:08,626][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 17:06:08,626][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 17:06:08,628][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 17:06:08,629][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 17:06:08,629][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 17:06:08,630][__main__][INFO] - Instantiating loggers...
+[2023-05-02 17:06:08,630][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 17:06:13,766][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 17:06:13,813][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 17:06:13,817][__main__][INFO] - Starting training!
+[2023-05-02 17:06:46,711][__main__][INFO] - Starting testing!
+[2023-05-02 17:06:47,863][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_17-06-08/checkpoints/epoch_000.ckpt
+[2023-05-02 17:06:47,864][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_17-06-08
+[2023-05-02 17:06:47,865][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 17:06:58,070][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-02 17:42:44,977][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 17:42:44,981][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 17:42:45,019][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 17:42:45,022][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 58, in train
+    cfg.model.input_dim = datamodule.n_features()
+TypeError: 'int' object is not callable
+[2023-05-02 17:42:45,023][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_17-42-44
+[2023-05-02 17:43:18,394][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 17:43:18,397][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 17:43:18,434][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 17:43:18,436][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 17:43:18,441][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 17:43:18,441][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 17:43:18,443][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 17:43:18,444][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 17:43:18,444][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 17:43:18,444][__main__][INFO] - Instantiating loggers...
+[2023-05-02 17:43:18,445][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 17:43:23,295][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 17:43:23,341][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 17:43:23,346][__main__][INFO] - Starting training!
+[2023-05-02 17:43:55,993][__main__][INFO] - Starting testing!
+[2023-05-02 17:43:57,059][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_17-43-18/checkpoints/epoch_000.ckpt
+[2023-05-02 17:43:57,060][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_17-43-18
+[2023-05-02 17:43:57,060][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 17:44:06,299][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-02 17:47:32,004][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 17:47:32,008][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 17:47:32,048][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 17:47:32,051][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 17:47:32,056][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 17:47:32,056][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 17:47:32,059][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 17:47:32,060][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 17:47:32,060][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 17:47:32,060][__main__][INFO] - Instantiating loggers...
+[2023-05-02 17:47:32,061][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 17:47:37,215][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 17:47:37,265][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 17:47:37,270][__main__][INFO] - Starting training!
+[2023-05-02 17:48:17,475][__main__][INFO] - Starting testing!
+[2023-05-02 17:48:18,797][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_17-47-31/checkpoints/epoch_000.ckpt
+[2023-05-02 17:48:18,799][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_17-47-31
+[2023-05-02 17:48:18,799][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 17:48:25,398][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-02 17:48:38,410][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 17:48:38,414][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 17:48:38,454][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 17:48:38,456][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 17:48:38,462][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 17:48:38,462][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 17:48:38,464][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 17:48:38,465][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 17:48:38,466][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 17:48:38,466][__main__][INFO] - Instantiating loggers...
+[2023-05-02 17:48:38,466][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 17:48:43,734][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 17:48:43,778][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 17:48:43,784][__main__][INFO] - Starting training!
+[2023-05-02 17:49:23,593][__main__][INFO] - Starting testing!
+[2023-05-02 17:49:24,985][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_17-48-38/checkpoints/epoch_000.ckpt
+[2023-05-02 17:49:24,986][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_17-48-38
+[2023-05-02 17:49:24,987][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 17:49:31,962][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-02 17:50:47,319][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 17:50:47,323][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 17:50:47,365][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 17:50:47,368][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 58, in train
+    cfg.model.input_dim = datamodule.n_features
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/data/lafan_pose_datamodule.py", line 84, in n_features
+    return self.seq_len * 72
+AttributeError: 'LAFANDataModule' object has no attribute 'seq_len'
+[2023-05-02 17:50:47,369][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_17-50-47
+[2023-05-02 17:54:19,536][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 17:54:19,540][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 17:54:19,583][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 17:54:19,587][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 17:54:19,593][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 17:54:19,593][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 17:54:19,595][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 17:54:19,596][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 17:54:19,596][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 17:54:19,597][__main__][INFO] - Instantiating loggers...
+[2023-05-02 17:54:19,597][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 17:54:24,606][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 17:54:24,650][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 17:54:24,655][__main__][INFO] - Starting training!
+[2023-05-02 17:55:04,695][__main__][INFO] - Starting testing!
+[2023-05-02 17:55:06,061][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_17-54-19/checkpoints/epoch_000.ckpt
+[2023-05-02 17:55:06,063][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_17-54-19
+[2023-05-02 17:55:06,063][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 17:55:13,892][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-02 17:56:27,491][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 17:56:27,495][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 17:56:27,535][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 17:56:27,538][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 17:56:27,543][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 17:56:27,543][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 17:56:27,545][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 17:56:27,546][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 17:56:27,547][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 17:56:27,547][__main__][INFO] - Instantiating loggers...
+[2023-05-02 17:56:27,547][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 17:56:32,559][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 17:56:32,607][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 17:56:32,612][__main__][INFO] - Starting training!
+[2023-05-02 18:03:19,826][__main__][INFO] - Starting testing!
+[2023-05-02 18:03:21,144][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_17-56-27/checkpoints/epoch_007.ckpt
+[2023-05-02 18:03:21,145][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_17-56-27
+[2023-05-02 18:03:21,146][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 18:03:30,450][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-02 18:30:25,645][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-02 18:30:25,649][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-02 18:30:25,686][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-02 18:30:25,689][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-02 18:30:25,693][__main__][INFO] - Instantiating callbacks...
+[2023-05-02 18:30:25,693][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-02 18:30:25,695][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-02 18:30:25,696][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-02 18:30:25,696][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-02 18:30:25,697][__main__][INFO] - Instantiating loggers...
+[2023-05-02 18:30:25,697][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-02 18:30:30,559][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-02 18:30:30,607][__main__][INFO] - Logging hyperparameters!
+[2023-05-02 18:30:30,612][__main__][INFO] - Starting training!
+[2023-05-02 18:42:08,876][__main__][INFO] - Starting testing!
+[2023-05-02 18:42:10,715][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_18-30-25/checkpoints/epoch_006.ckpt
+[2023-05-02 18:42:10,716][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-02_18-30-25
+[2023-05-02 18:42:10,716][src.utils.utils][INFO] - Closing wandb!
+[2023-05-02 18:42:18,305][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-09 10:45:01,062][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 10:45:01,066][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 10:45:01,102][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 10:45:01,104][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-09 10:45:01,105][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 92, in _call_target
+    return _target_(*args, **kwargs)
+TypeError: __init__() missing 1 required positional argument: 'optimizer'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 60, in train
+    model: LightningModule = hydra.utils.instantiate(cfg.model)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 342, in instantiate_node
+    value = instantiate_node(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 347, in instantiate_node
+    return _call_target(_target_, partial, args, kwargs, full_key)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 97, in _call_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error in call to target 'torch.optim.lr_scheduler.LambdaLR':
+TypeError("__init__() missing 1 required positional argument: 'optimizer'")
+full_key: model.scheduler
+[2023-05-09 10:45:01,106][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_10-45-01
+[2023-05-09 11:07:10,945][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 11:07:10,948][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 11:07:10,984][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 11:07:10,987][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-09 11:07:10,991][__main__][INFO] - Instantiating callbacks...
+[2023-05-09 11:07:10,992][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-09 11:07:10,993][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-09 11:07:10,994][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-09 11:07:10,995][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-09 11:07:10,995][__main__][INFO] - Instantiating loggers...
+[2023-05-09 11:07:10,995][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-09 11:07:14,946][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 11:07:14,991][__main__][INFO] - Logging hyperparameters!
+[2023-05-09 11:07:14,997][__main__][INFO] - Starting training!
+[2023-05-09 11:07:15,445][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 90, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 520, in fit
+    call._call_and_handle_interrupt(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 559, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 911, in _run
+    self.strategy.setup(self)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/strategies/single_device.py", line 73, in setup
+    self.model_to_device()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/strategies/single_device.py", line 70, in model_to_device
+    self.model.to(self.root_device)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/fabric/utilities/device_dtype_mixin.py", line 54, in to
+    return super().to(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1145, in to
+    return self._apply(convert)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 797, in _apply
+    module._apply(fn)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 797, in _apply
+    module._apply(fn)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 820, in _apply
+    param_applied = fn(param)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1143, in convert
+    return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)
+RuntimeError: CUDA error: CUDA-capable device(s) is/are busy or unavailable
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[2023-05-09 11:07:15,447][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_11-07-10
+[2023-05-09 11:07:15,448][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 11:10:46,864][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 11:10:46,867][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 11:10:46,906][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 11:10:46,908][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-09 11:10:46,919][__main__][INFO] - Instantiating callbacks...
+[2023-05-09 11:10:46,919][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-09 11:10:46,922][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-09 11:10:46,923][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-09 11:10:46,924][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-09 11:10:46,924][__main__][INFO] - Instantiating loggers...
+[2023-05-09 11:10:46,924][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-09 11:10:52,481][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 11:10:52,532][__main__][INFO] - Logging hyperparameters!
+[2023-05-09 11:10:52,537][__main__][INFO] - Starting training!
+[2023-05-09 11:23:07,683][__main__][INFO] - Starting testing!
+[2023-05-09 11:23:09,886][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_11-10-46/checkpoints/epoch_009.ckpt
+[2023-05-09 11:23:09,888][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_11-10-46
+[2023-05-09 11:23:09,888][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 11:23:19,637][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-09 11:43:36,539][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 11:43:36,543][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 11:43:36,579][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 11:43:36,581][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-09 11:43:36,587][__main__][INFO] - Instantiating callbacks...
+[2023-05-09 11:43:36,587][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-09 11:43:36,589][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-09 11:43:36,589][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-09 11:43:36,590][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-09 11:43:36,590][__main__][INFO] - Instantiating loggers...
+[2023-05-09 11:43:36,590][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-09 11:43:41,761][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 11:43:41,810][__main__][INFO] - Logging hyperparameters!
+[2023-05-09 11:43:41,815][__main__][INFO] - Starting training!
+[2023-05-09 11:58:27,961][__main__][INFO] - Starting testing!
+[2023-05-09 11:58:30,310][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_11-43-36/checkpoints/epoch_006.ckpt
+[2023-05-09 11:58:30,312][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_11-43-36
+[2023-05-09 11:58:30,312][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 11:58:38,847][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-09 12:16:57,762][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 12:16:57,766][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 12:16:57,805][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 12:16:57,807][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-09 12:16:57,812][__main__][INFO] - Instantiating callbacks...
+[2023-05-09 12:16:57,812][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-09 12:16:57,814][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-09 12:16:57,815][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-09 12:16:57,815][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-09 12:16:57,816][__main__][INFO] - Instantiating loggers...
+[2023-05-09 12:16:57,816][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-09 12:17:01,689][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 12:17:01,737][__main__][INFO] - Logging hyperparameters!
+[2023-05-09 12:17:01,742][__main__][INFO] - Starting training!
+[2023-05-09 12:35:04,338][__main__][INFO] - Starting testing!
+[2023-05-09 12:35:06,520][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_12-16-57/checkpoints/epoch_002.ckpt
+[2023-05-09 12:35:06,521][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_12-16-57
+[2023-05-09 12:35:06,521][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 12:35:14,267][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-09 13:47:54,107][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 13:47:54,111][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 13:47:54,145][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 13:47:54,147][__main__][INFO] - Instantiating model <src.models.old_vae.VAE>
+[2023-05-09 13:47:54,157][__main__][INFO] - Instantiating callbacks...
+[2023-05-09 13:47:54,157][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-09 13:47:54,159][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-09 13:47:54,159][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-09 13:47:54,160][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-09 13:47:54,160][__main__][INFO] - Instantiating loggers...
+[2023-05-09 13:47:54,160][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-09 13:48:03,243][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 13:48:03,294][__main__][INFO] - Logging hyperparameters!
+[2023-05-09 13:48:03,298][__main__][INFO] - Starting training!
+[2023-05-09 13:48:16,149][__main__][INFO] - Starting testing!
+[2023-05-09 13:48:16,150][__main__][WARNING] - Best ckpt not found! Using current weights for testing...
+[2023-05-09 13:48:16,155][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 100, in train
+    trainer.test(model=model, datamodule=datamodule, ckpt_path=ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 706, in test
+    return call._call_and_handle_interrupt(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 749, in _test_impl
+    results = self._run(model, ckpt_path=ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 883, in _run
+    _verify_loop_configurations(self)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/configuration_validator.py", line 44, in _verify_loop_configurations
+    __verify_eval_loop_configuration(model, "test")
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/configuration_validator.py", line 108, in __verify_eval_loop_configuration
+    raise MisconfigurationException(f"No `{step_name}()` method defined to run `Trainer.{trainer_method}`.")
+lightning.fabric.utilities.exceptions.MisconfigurationException: No `test_step()` method defined to run `Trainer.test`.
+[2023-05-09 13:48:16,158][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_13-47-54
+[2023-05-09 13:48:16,159][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 13:49:50,319][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 13:49:50,323][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 13:49:50,359][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 13:49:50,362][__main__][INFO] - Instantiating model <src.models.old_vae.VAE>
+[2023-05-09 13:49:50,364][__main__][INFO] - Instantiating callbacks...
+[2023-05-09 13:49:50,365][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-09 13:49:50,367][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-09 13:49:50,367][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-09 13:49:50,368][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-09 13:49:50,368][__main__][INFO] - Instantiating loggers...
+[2023-05-09 13:49:50,368][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-09 13:50:01,499][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 13:50:01,553][__main__][INFO] - Logging hyperparameters!
+[2023-05-09 13:50:01,558][__main__][INFO] - Starting training!
+[2023-05-09 13:51:05,135][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 90, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 520, in fit
+    call._call_and_handle_interrupt(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 559, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 935, in _run
+    results = self._run_stage()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 978, in _run_stage
+    self.fit_loop.run()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/loops/fit_loop.py", line 202, in run
+    self.on_advance_end()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/loops/fit_loop.py", line 369, in on_advance_end
+    call._call_callback_hooks(trainer, "on_train_epoch_end", monitoring_callbacks=True)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 190, in _call_callback_hooks
+    fn(trainer, trainer.lightning_module, *args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/callbacks/early_stopping.py", line 184, in on_train_epoch_end
+    self._run_early_stopping_check(trainer)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/callbacks/early_stopping.py", line 195, in _run_early_stopping_check
+    if trainer.fast_dev_run or not self._validate_condition_metric(  # disable early_stopping with fast_dev_run
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/callbacks/early_stopping.py", line 150, in _validate_condition_metric
+    raise RuntimeError(error_msg)
+RuntimeError: Early stopping conditioned on metric `val/loss` which is not available. Pass in or modify your `EarlyStopping` callback to use any of the following: `train reconstruction loss`, `train KL divergence`, `train loss`, `val mse`, `val KL divergence`, `val loss`
+[2023-05-09 13:51:05,138][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_13-49-50
+[2023-05-09 13:51:05,138][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 13:56:01,991][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 13:56:02,001][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 13:56:02,035][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 13:56:02,037][__main__][INFO] - Instantiating model <src.models.old_vae.VAE>
+[2023-05-09 13:56:02,039][__main__][INFO] - Instantiating callbacks...
+[2023-05-09 13:56:02,039][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-09 13:56:02,041][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-05-09 13:56:02,042][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-09 13:56:02,042][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-09 13:56:02,043][__main__][INFO] - Instantiating loggers...
+[2023-05-09 13:56:02,043][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-09 13:56:06,088][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 13:56:06,132][__main__][INFO] - Logging hyperparameters!
+[2023-05-09 13:56:06,137][__main__][INFO] - Starting training!
+[2023-05-09 13:57:03,833][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 90, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 520, in fit
+    call._call_and_handle_interrupt(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 559, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 935, in _run
+    results = self._run_stage()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 978, in _run_stage
+    self.fit_loop.run()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/loops/fit_loop.py", line 202, in run
+    self.on_advance_end()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/loops/fit_loop.py", line 369, in on_advance_end
+    call._call_callback_hooks(trainer, "on_train_epoch_end", monitoring_callbacks=True)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 190, in _call_callback_hooks
+    fn(trainer, trainer.lightning_module, *args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/callbacks/early_stopping.py", line 184, in on_train_epoch_end
+    self._run_early_stopping_check(trainer)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/callbacks/early_stopping.py", line 195, in _run_early_stopping_check
+    if trainer.fast_dev_run or not self._validate_condition_metric(  # disable early_stopping with fast_dev_run
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/callbacks/early_stopping.py", line 150, in _validate_condition_metric
+    raise RuntimeError(error_msg)
+RuntimeError: Early stopping conditioned on metric `val/loss` which is not available. Pass in or modify your `EarlyStopping` callback to use any of the following: `train reconstruction loss`, `train KL divergence`, `train loss`, `val mse`, `val KL divergence`, `val loss`
+[2023-05-09 13:57:03,835][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_13-56-01
+[2023-05-09 13:57:03,835][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 14:02:07,809][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 14:02:07,812][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 14:02:07,840][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 14:02:07,842][__main__][INFO] - Instantiating model <src.models.old_vae.VAE>
+[2023-05-09 14:02:07,844][__main__][INFO] - Instantiating callbacks...
+[2023-05-09 14:02:07,844][src.utils.instantiators][WARNING] - No callback configs found! Skipping..
+[2023-05-09 14:02:07,844][__main__][INFO] - Instantiating loggers...
+[2023-05-09 14:02:07,844][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-09 14:02:12,082][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 14:02:12,126][__main__][INFO] - Logging hyperparameters!
+[2023-05-09 14:02:12,129][__main__][INFO] - Starting training!
+[2023-05-09 14:08:12,948][__main__][INFO] - Starting testing!
+[2023-05-09 14:08:12,949][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 100, in train
+    trainer.test(model=model, datamodule=datamodule, ckpt_path=ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 706, in test
+    return call._call_and_handle_interrupt(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 749, in _test_impl
+    results = self._run(model, ckpt_path=ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 883, in _run
+    _verify_loop_configurations(self)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/configuration_validator.py", line 44, in _verify_loop_configurations
+    __verify_eval_loop_configuration(model, "test")
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/configuration_validator.py", line 108, in __verify_eval_loop_configuration
+    raise MisconfigurationException(f"No `{step_name}()` method defined to run `Trainer.{trainer_method}`.")
+lightning.fabric.utilities.exceptions.MisconfigurationException: No `test_step()` method defined to run `Trainer.test`.
+[2023-05-09 14:08:12,951][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_14-02-07
+[2023-05-09 14:08:12,951][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 14:26:59,300][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 14:26:59,303][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 14:26:59,331][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 14:26:59,333][__main__][INFO] - Instantiating model <src.models.old_vae.VAE>
+[2023-05-09 14:26:59,336][__main__][INFO] - Instantiating callbacks...
+[2023-05-09 14:26:59,336][src.utils.instantiators][WARNING] - No callback configs found! Skipping..
+[2023-05-09 14:26:59,336][__main__][INFO] - Instantiating loggers...
+[2023-05-09 14:26:59,336][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-09 14:27:03,357][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 14:27:03,407][__main__][INFO] - Logging hyperparameters!
+[2023-05-09 14:27:03,410][__main__][INFO] - Starting training!
+[2023-05-09 14:32:59,306][__main__][INFO] - Starting testing!
+[2023-05-09 14:32:59,307][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 100, in train
+    trainer.test(model=model, datamodule=datamodule, ckpt_path=ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 706, in test
+    return call._call_and_handle_interrupt(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 749, in _test_impl
+    results = self._run(model, ckpt_path=ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 883, in _run
+    _verify_loop_configurations(self)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/configuration_validator.py", line 44, in _verify_loop_configurations
+    __verify_eval_loop_configuration(model, "test")
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/configuration_validator.py", line 108, in __verify_eval_loop_configuration
+    raise MisconfigurationException(f"No `{step_name}()` method defined to run `Trainer.{trainer_method}`.")
+lightning.fabric.utilities.exceptions.MisconfigurationException: No `test_step()` method defined to run `Trainer.test`.
+[2023-05-09 14:32:59,308][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_14-26-59
+[2023-05-09 14:32:59,309][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 14:35:59,582][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 14:35:59,586][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 14:35:59,619][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 14:35:59,621][__main__][INFO] - Instantiating model <src.models.old_vae.VAE>
+[2023-05-09 14:35:59,633][__main__][INFO] - Instantiating callbacks...
+[2023-05-09 14:35:59,633][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-09 14:35:59,635][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 92, in _call_target
+    return _target_(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 241, in __init__
+    self.__init_monitor_mode(mode)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 449, in __init_monitor_mode
+    raise MisconfigurationException(f"`mode` can be {', '.join(mode_dict.keys())} but got {mode}")
+lightning.fabric.utilities.exceptions.MisconfigurationException: `mode` can be min, max but got None
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 63, in train
+    callbacks: List[Callback] = utils.instantiate_callbacks(cfg.get("callbacks"))
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/instantiators.py", line 28, in instantiate_callbacks
+    callbacks.append(hydra.utils.instantiate(cb_conf))
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 347, in instantiate_node
+    return _call_target(_target_, partial, args, kwargs, full_key)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 97, in _call_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error in call to target 'lightning.pytorch.callbacks.model_checkpoint.ModelCheckpoint':
+MisconfigurationException('`mode` can be min, max but got None')
+full_key: callbacks.model_checkpoint
+[2023-05-09 14:35:59,636][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_14-35-59
+[2023-05-09 14:37:55,490][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 14:37:55,494][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 14:37:55,527][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 14:37:55,530][__main__][INFO] - Instantiating model <src.models.old_vae.VAE>
+[2023-05-09 14:37:55,532][__main__][INFO] - Instantiating callbacks...
+[2023-05-09 14:37:55,533][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-09 14:37:55,534][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-09 14:37:55,535][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-09 14:37:55,535][__main__][INFO] - Instantiating loggers...
+[2023-05-09 14:37:55,535][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-09 14:37:59,326][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 14:37:59,371][__main__][INFO] - Logging hyperparameters!
+[2023-05-09 14:37:59,375][__main__][INFO] - Starting training!
+[2023-05-09 14:48:21,126][__main__][INFO] - Starting testing!
+[2023-05-09 14:48:21,127][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 100, in train
+    trainer.test(model=model, datamodule=datamodule, ckpt_path=ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 706, in test
+    return call._call_and_handle_interrupt(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 749, in _test_impl
+    results = self._run(model, ckpt_path=ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 883, in _run
+    _verify_loop_configurations(self)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/configuration_validator.py", line 44, in _verify_loop_configurations
+    __verify_eval_loop_configuration(model, "test")
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/configuration_validator.py", line 108, in __verify_eval_loop_configuration
+    raise MisconfigurationException(f"No `{step_name}()` method defined to run `Trainer.{trainer_method}`.")
+lightning.fabric.utilities.exceptions.MisconfigurationException: No `test_step()` method defined to run `Trainer.test`.
+[2023-05-09 14:48:21,129][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_14-37-55
+[2023-05-09 14:48:21,129][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 15:15:49,062][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 15:15:49,073][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 15:15:49,105][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 15:15:49,108][__main__][INFO] - Instantiating model <src.models.old_vae.VAE>
+[2023-05-09 15:15:49,110][__main__][INFO] - Instantiating callbacks...
+[2023-05-09 15:15:49,110][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-09 15:15:49,112][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-09 15:15:49,113][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-09 15:15:49,113][__main__][INFO] - Instantiating loggers...
+[2023-05-09 15:15:49,113][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-09 15:15:53,347][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 15:15:53,403][__main__][INFO] - Logging hyperparameters!
+[2023-05-09 15:15:53,407][__main__][INFO] - Starting training!
+[2023-05-09 15:25:31,319][__main__][INFO] - Starting testing!
+[2023-05-09 15:25:33,003][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_15-15-49/checkpoints/epoch_009.ckpt
+[2023-05-09 15:25:33,004][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_15-15-49
+[2023-05-09 15:25:33,005][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 15:25:40,780][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-09 15:52:13,113][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 15:52:13,117][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 15:52:13,150][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 15:52:13,153][__main__][INFO] - Instantiating model <src.models.beta_vae_module_debug.beta_VAEModule>
+[2023-05-09 15:52:13,158][__main__][INFO] - Instantiating callbacks...
+[2023-05-09 15:52:13,158][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-09 15:52:13,160][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-09 15:52:13,161][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-09 15:52:13,161][__main__][INFO] - Instantiating loggers...
+[2023-05-09 15:52:13,162][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-09 15:52:17,406][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 15:52:17,451][__main__][INFO] - Logging hyperparameters!
+[2023-05-09 15:52:17,456][__main__][INFO] - Starting training!
+[2023-05-09 16:05:14,342][__main__][INFO] - Starting testing!
+[2023-05-09 16:05:16,519][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_15-52-13/checkpoints/epoch_002.ckpt
+[2023-05-09 16:05:16,520][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_15-52-13
+[2023-05-09 16:05:16,520][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 16:05:27,609][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-09 16:21:08,393][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 16:21:08,397][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 16:21:08,432][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 16:21:08,434][__main__][INFO] - Instantiating model <src.models.beta_vae_module_debug.beta_VAEModule>
+[2023-05-09 16:21:08,439][__main__][INFO] - Instantiating callbacks...
+[2023-05-09 16:21:08,439][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-09 16:21:08,441][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-09 16:21:08,441][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-09 16:21:08,442][__main__][INFO] - Instantiating loggers...
+[2023-05-09 16:21:08,442][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-09 16:21:12,616][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 16:21:12,670][__main__][INFO] - Logging hyperparameters!
+[2023-05-09 16:21:12,674][__main__][INFO] - Starting training!
+[2023-05-09 16:21:18,920][__main__][INFO] - Starting testing!
+[2023-05-09 16:21:18,921][__main__][WARNING] - Best ckpt not found! Using current weights for testing...
+[2023-05-09 16:21:21,287][__main__][INFO] - Best ckpt path: None
+[2023-05-09 16:21:21,288][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_16-21-08
+[2023-05-09 16:21:21,289][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 16:21:48,444][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 16:21:48,449][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 16:21:48,483][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 16:21:48,486][__main__][INFO] - Instantiating model <src.models.beta_vae_module_debug.beta_VAEModule>
+[2023-05-09 16:21:48,490][__main__][INFO] - Instantiating callbacks...
+[2023-05-09 16:21:48,490][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-09 16:21:48,493][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-09 16:21:48,493][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-09 16:21:48,493][__main__][INFO] - Instantiating loggers...
+[2023-05-09 16:21:48,494][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-09 16:21:52,799][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 16:21:52,848][__main__][INFO] - Logging hyperparameters!
+[2023-05-09 16:21:52,852][__main__][INFO] - Starting training!
+[2023-05-09 16:35:05,629][__main__][INFO] - Starting testing!
+[2023-05-09 16:35:07,856][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_16-21-48/checkpoints/epoch_009.ckpt
+[2023-05-09 16:35:07,857][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_16-21-48
+[2023-05-09 16:35:07,857][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 16:35:15,921][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-09 17:13:08,369][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 17:13:08,373][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 17:13:08,407][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 17:13:08,409][__main__][INFO] - Instantiating model <src.models.beta_vae_module_debug.beta_VAEModule>
+[2023-05-09 17:13:08,413][__main__][INFO] - Instantiating callbacks...
+[2023-05-09 17:13:08,413][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-09 17:13:08,415][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-09 17:13:08,415][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-09 17:13:08,416][__main__][INFO] - Instantiating loggers...
+[2023-05-09 17:13:08,416][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-09 17:13:13,316][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 17:13:13,362][__main__][INFO] - Logging hyperparameters!
+[2023-05-09 17:13:13,366][__main__][INFO] - Starting training!
+[2023-05-09 17:26:48,137][__main__][INFO] - Starting testing!
+[2023-05-09 17:26:50,729][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_17-13-08/checkpoints/epoch_009.ckpt
+[2023-05-09 17:26:50,731][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_17-13-08
+[2023-05-09 17:26:50,731][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 17:26:55,773][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-09 17:28:29,415][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-09 17:28:29,419][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-09 17:28:29,456][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-09 17:28:29,459][__main__][INFO] - Instantiating model <src.models.beta_vae_module_debug.beta_VAEModule>
+[2023-05-09 17:28:29,466][__main__][INFO] - Instantiating callbacks...
+[2023-05-09 17:28:29,466][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-09 17:28:29,469][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-09 17:28:29,469][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-09 17:28:29,469][__main__][INFO] - Instantiating loggers...
+[2023-05-09 17:28:29,470][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-09 17:28:33,442][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-09 17:28:33,488][__main__][INFO] - Logging hyperparameters!
+[2023-05-09 17:28:33,493][__main__][INFO] - Starting training!
+[2023-05-09 18:51:43,266][__main__][INFO] - Starting testing!
+[2023-05-09 18:51:55,179][__main__][INFO] - Best ckpt path: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_17-28-29/checkpoints/epoch_009.ckpt
+[2023-05-09 18:51:55,183][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-09_17-28-29
+[2023-05-09 18:51:55,183][src.utils.utils][INFO] - Closing wandb!
+[2023-05-09 18:52:02,774][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-05-10 11:12:52,449][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-05-10 11:12:52,453][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-05-10 11:12:52,490][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-10 11:12:52,492][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-10 11:12:52,497][__main__][INFO] - Instantiating callbacks...
+[2023-05-10 11:12:52,498][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-05-10 11:12:52,500][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-05-10 11:12:52,500][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-05-10 11:12:52,501][__main__][INFO] - Instantiating loggers...
+[2023-05-10 11:12:52,501][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-05-10 11:12:58,177][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-05-10 11:12:58,223][__main__][INFO] - Logging hyperparameters!
+[2023-05-10 11:12:58,228][__main__][INFO] - Starting training!
+[2023-05-10 11:12:58,803][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/train.py", line 90, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 520, in fit
+    call._call_and_handle_interrupt(
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 559, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/trainer/trainer.py", line 911, in _run
+    self.strategy.setup(self)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/strategies/single_device.py", line 73, in setup
+    self.model_to_device()
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/pytorch/strategies/single_device.py", line 70, in model_to_device
+    self.model.to(self.root_device)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/lightning/fabric/utilities/device_dtype_mixin.py", line 54, in to
+    return super().to(*args, **kwargs)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1145, in to
+    return self._apply(convert)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 797, in _apply
+    module._apply(fn)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 797, in _apply
+    module._apply(fn)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 820, in _apply
+    param_applied = fn(param)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1143, in convert
+    return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)
+RuntimeError: CUDA error: CUDA-capable device(s) is/are busy or unavailable
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[2023-05-10 11:12:58,805][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-10_11-12-52
+[2023-05-10 11:12:58,806][src.utils.utils][INFO] - Closing wandb!

@@ -1,0 +1,7 @@
+/logs/
+*.logs
+*.pyc
+/data/
+/kinetix-scenegraph/
+**/wandb/
+*.pt

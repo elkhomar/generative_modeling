@@ -1,0 +1,18 @@
+defaults:
+  - _self_
+
+  - data: lafan.yaml
+  - model: beta_vae.yaml
+  - callbacks: default.yaml
+  - trainer: gpu.yaml
+  - paths: default.yaml
+  - hydra: default.yaml
+  - logger: wandb.yaml
+
+
+task_name: "infer"
+
+tags: ["dev"]
+
+# passing checkpoint path is necessary for inference
+ckpt_path: ${paths.current_dir}/last.ckpt

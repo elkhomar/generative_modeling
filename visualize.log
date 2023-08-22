@@ -1,0 +1,178 @@
+[2023-05-12 15:31:33,427][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-12 15:31:33,429][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-12 15:31:33,431][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-12 15:31:33,440][__main__][INFO] - Starting visualisation!
+[2023-05-12 15:31:33,733][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/visualize.py", line 82, in visualize
+    mu = torch.load(cfg.ckpt_path + 'mu_test.pt')[0]
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/serialization.py", line 791, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/serialization.py", line 271, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/serialization.py", line 252, in __init__
+    super().__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-11_14-34-22/checkpoints/last.ckptmu_test.pt'
+[2023-05-12 15:31:33,735][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-12_15-31-33
+[2023-05-12 15:31:53,064][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-12 15:31:53,066][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-12 15:31:53,068][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-12 15:31:53,077][__main__][INFO] - Starting visualisation!
+[2023-05-12 15:31:53,365][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/visualize.py", line 82, in visualize
+    mu = torch.load(cfg.ckpt_path + '/mu_test.pt')[0]
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/serialization.py", line 791, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/serialization.py", line 271, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/serialization.py", line 252, in __init__
+    super().__init__(open(name, mode))
+NotADirectoryError: [Errno 20] Not a directory: '/home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-11_14-34-22/checkpoints/last.ckpt/mu_test.pt'
+[2023-05-12 15:31:53,367][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-12_15-31-53
+[2023-05-12 15:33:45,334][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-12 15:33:45,336][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-12 15:33:45,338][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-12 15:33:45,347][__main__][INFO] - Starting visualisation!
+[2023-05-12 15:33:45,694][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/visualize.py", line 90, in visualize
+    os.mkdir(cfg.ckpt_path + 'latent_extrapolation')
+FileExistsError: [Errno 17] File exists: '/home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-11_14-34-22/checkpoints/last.ckptlatent_extrapolation'
+[2023-05-12 15:33:45,696][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-12_15-33-45
+[2023-05-12 15:34:39,251][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-12 15:34:39,252][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-12 15:34:39,254][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-12 15:34:39,264][__main__][INFO] - Starting visualisation!
+[2023-05-12 15:34:39,584][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/visualize.py", line 90, in visualize
+    os.mkdir(directory + '/latent_extrapolation')
+FileExistsError: [Errno 17] File exists: '/home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-11_14-34-22/checkpoints/latent_extrapolation'
+[2023-05-12 15:34:39,586][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-12_15-34-39
+[2023-05-12 15:36:20,896][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-12 15:36:20,898][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-12 15:36:20,900][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-12 15:36:20,910][__main__][INFO] - Starting visualisation!
+[2023-05-12 15:36:21,306][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+TypeError: cannot unpack non-iterable NoneType object
+[2023-05-12 15:36:21,308][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-12_15-36-20
+[2023-05-12 16:39:23,828][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-12 16:39:23,830][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-12 16:39:23,832][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-12 16:39:23,841][__main__][INFO] - Starting visualisation!
+[2023-05-12 16:39:24,388][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+TypeError: cannot unpack non-iterable NoneType object
+[2023-05-12 16:39:24,390][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-12_16-39-23
+[2023-05-12 17:55:03,872][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-12 17:55:03,875][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-12 17:55:03,877][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-12 17:55:03,888][__main__][INFO] - Starting visualisation!
+[2023-05-12 17:55:04,715][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+TypeError: cannot unpack non-iterable NoneType object
+[2023-05-12 17:55:04,718][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-12_17-55-03
+[2023-05-12 18:00:35,607][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-12 18:00:35,609][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-12 18:00:35,612][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-12 18:00:35,621][__main__][INFO] - Starting visualisation!
+[2023-05-12 18:00:35,956][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/visualize.py", line 83, in visualize
+    os.mkdir(directory + '/latent_extrapolation')
+FileExistsError: [Errno 17] File exists: '/home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-11_14-34-22/checkpoints/latent_extrapolation'
+[2023-05-12 18:00:35,958][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-12_18-00-35
+[2023-05-12 18:02:09,178][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-12 18:02:09,180][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-12 18:02:09,183][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-12 18:02:09,193][__main__][INFO] - Starting visualisation!
+[2023-05-12 18:02:09,511][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/visualize.py", line 83, in visualize
+    os.mkdir(directory + '/latent_extrapolation')
+FileExistsError: [Errno 17] File exists: '/home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-11_14-34-22/checkpoints/latent_extrapolation'
+[2023-05-12 18:02:09,513][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-12_18-02-09
+[2023-05-12 18:02:50,771][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-12 18:02:50,773][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-12 18:02:50,775][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-12 18:02:50,784][__main__][INFO] - Starting visualisation!
+[2023-05-12 18:02:51,080][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/visualize.py", line 83, in visualize
+    os.mkdir(directory + '/latent_extrapolation')
+FileExistsError: [Errno 17] File exists: '/home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-11_14-34-22/checkpoints/latent_extrapolation'
+[2023-05-12 18:02:51,081][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-12_18-02-50
+[2023-05-15 13:32:53,139][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-15 13:32:53,141][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-15 13:32:53,143][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-15 13:32:53,162][__main__][INFO] - Starting visualisation!
+[2023-05-15 13:32:53,616][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/visualize.py", line 86, in visualize
+    sigma = torch.load(directory + '/sigma_test.pt')[0]
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/serialization.py", line 791, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/serialization.py", line 271, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/kinetix/anaconda3/envs/hydra_env/lib/python3.9/site-packages/torch/serialization.py", line 252, in __init__
+    super().__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-15_11-22-15/checkpoints/sigma_test.pt'
+[2023-05-15 13:32:53,618][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-15_13-32-53
+[2023-05-15 13:34:07,275][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-15 13:34:07,276][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-15 13:34:07,278][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-15 13:34:07,290][__main__][INFO] - Starting visualisation!
+[2023-05-15 13:34:07,586][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/visualize.py", line 83, in visualize
+    os.mkdir(directory + '/latent_extrapolation')
+FileExistsError: [Errno 17] File exists: '/home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-15_11-22-15/checkpoints/latent_extrapolation'
+[2023-05-15 13:34:07,588][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-15_13-34-07
+[2023-05-15 13:34:21,541][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-15 13:34:21,543][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-15 13:34:21,545][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-15 13:34:21,556][__main__][INFO] - Starting visualisation!
+[2023-05-15 13:34:21,997][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+TypeError: cannot unpack non-iterable NoneType object
+[2023-05-15 13:34:21,999][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-15_13-34-21
+[2023-05-15 13:38:20,670][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-05-15 13:38:20,672][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-05-15 13:38:20,674][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-05-15 13:38:20,685][__main__][INFO] - Starting visualisation!
+[2023-05-15 13:38:20,976][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/kinetix/Documents/Hydra/lightning-hydra-template/src/visualize.py", line 83, in visualize
+    os.mkdir(directory + '/latent_extrapolation')
+FileExistsError: [Errno 17] File exists: '/home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/runs/2023-05-15_11-22-15/checkpoints/latent_extrapolation'
+[2023-05-15 13:38:20,978][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/visualize/runs/2023-05-15_13-38-20
