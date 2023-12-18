@@ -1,5 +1,0 @@
-_target_: src.models.old_vae.VAE
-  
-input_dim: 144
-
-latent_dim: 16

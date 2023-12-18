@@ -88,6 +88,10 @@ def train(cfg: DictConfig) -> Tuple[dict, dict]:
 
     if cfg.get("train"):
         log.info("Starting training!")
+        
+        datamodule.setup() # Used for validation metrics (AD, KT)
+        model.val_data = datamodule.val_dataloader().dataset.dataset.data # Used for validation metrics (AD, KT)
+
         trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
         trainer.save_checkpoint(cfg.paths.output_dir + "/checkpoints/last.ckpt")
 

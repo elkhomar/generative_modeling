@@ -1951,3 +1951,21 @@ RuntimeError: The size of tensor a (3) must match the size of tensor b (141) at 
 [2023-05-17 15:00:17,217][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
 [2023-05-17 15:00:17,262][__main__][INFO] - Starting inference!
 [2023-05-17 15:00:47,276][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/infer/runs/2023-05-17_15-00-17
+[2023-09-04 01:06:48,069][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-09-04 01:06:48,083][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-09-04 01:06:48,096][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-09-04 01:06:49,067][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-09-04 01:06:49,499][__main__][INFO] - Starting inference!
+[2023-09-04 01:07:32,154][src.utils.utils][INFO] - Output dir: /media/omar/9CE41B66E41B4246/Kinetix_backup/stagiaire-omar-mvae/Hydra/lightning-hydra-template/logs/infer/runs/2023-09-04_01-06-47
+[2023-09-04 01:25:48,698][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-09-04 01:25:48,711][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-09-04 01:25:48,721][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-09-04 01:25:49,734][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-09-04 01:25:50,184][__main__][INFO] - Starting inference!
+[2023-09-04 01:26:34,310][src.utils.utils][INFO] - Output dir: /media/omar/9CE41B66E41B4246/Kinetix_backup/stagiaire-omar-mvae/Hydra/lightning-hydra-template/logs/infer/runs/2023-09-04_01-25-48
+[2023-09-04 01:29:55,322][src.utils.utils][WARNING] - Extras config not found! <cfg.extras=null>
+[2023-09-04 01:29:55,328][__main__][INFO] - Instantiating datamodule <src.data.lafan_pose_datamodule.LAFANDataModule>
+[2023-09-04 01:29:55,345][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-09-04 01:29:56,356][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-09-04 01:29:56,810][__main__][INFO] - Starting inference!
+[2023-09-04 01:30:44,210][src.utils.utils][INFO] - Output dir: /media/omar/9CE41B66E41B4246/Kinetix_backup/stagiaire-omar-mvae/Hydra/lightning-hydra-template/logs/infer/runs/2023-09-04_01-29-55

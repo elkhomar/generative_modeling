@@ -18,4 +18,4 @@ output_dir: ${hydra:runtime.output_dir}
 work_dir: ${hydra:runtime.cwd}
 
 # 
-current_dir: ${paths.root_dir}/logs/train/runs//checkpoints
+current_dir: ${paths.root_dir}/logs/train/multiruns/2023-07-11_17-15-53/0/checkpoints

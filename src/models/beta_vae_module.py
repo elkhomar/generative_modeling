@@ -4,6 +4,8 @@ import torch.nn.functional as F
 from torch.utils.data import DataLoader
 from lightning import LightningModule
 from torchmetrics import MaxMetric, MeanMetric
+from src.custom_metrics import normalised_kendall_tau_distance, anderson_darling_distance
+
 
 
  
@@ -12,7 +14,9 @@ class beta_VAEModule(LightningModule):
                  optimizer: torch.optim.Optimizer,
                  scheduler: torch.optim.lr_scheduler,
                  input_dim,
-                 latent_dim, 
+                 latent_dim,
+                 encoder_dims, 
+                 decoder_dims,
                  beta=1.0
     ):
         super().__init__()
@@ -29,25 +33,27 @@ class beta_VAEModule(LightningModule):
 
         # Encoder
         self.encoder = nn.Sequential(
-            nn.Linear(input_dim, 256),
+            nn.Linear(input_dim, encoder_dims[0]),
             nn.LeakyReLU(),
-            nn.Linear(256, 128),
+            nn.Linear(encoder_dims[0], encoder_dims[1]),
             nn.LeakyReLU(),
-            nn.Linear(128, 64),
+            nn.Linear(encoder_dims[1], encoder_dims[2]),
             nn.LeakyReLU(),
         )
 
         # Latent vectors
-        self.mu = nn.Linear(64, latent_dim)
-        self.log_var = nn.Linear(64, latent_dim)
+        self.mu = nn.Linear(encoder_dims[2], latent_dim)
+        self.log_var = nn.Linear(encoder_dims[2], latent_dim)
 
         # Decoder
         self.decoder = nn.Sequential(
-            nn.Linear(latent_dim, 64),
+            nn.Linear(latent_dim, decoder_dims[0]),
             nn.LeakyReLU(),
-            nn.Linear(64, 128),
+            nn.Linear(decoder_dims[0], decoder_dims[1]),
             nn.LeakyReLU(),
-            nn.Linear(128, input_dim)
+            nn.Linear(decoder_dims[1], decoder_dims[2]),
+            nn.LeakyReLU(),
+            nn.Linear(decoder_dims[2], input_dim)
         )
 
         # for averaging loss across batches
@@ -59,9 +65,19 @@ class beta_VAEModule(LightningModule):
         self.val_mse = MeanMetric()
         self.val_kl = MeanMetric()
 
+        self.val_data = None
+        self.val_AD = MeanMetric()
+        self.val_AK = MeanMetric()
+
         self.test_loss = MeanMetric()
         self.test_mse = MeanMetric()
         self.test_kl = MeanMetric()
+
+
+
+    ### Training section
+
+
 
     def encode(self, x):
         mu = self.mu(self.encoder(x))
@@ -117,6 +133,11 @@ class beta_VAEModule(LightningModule):
     def on_train_epoch_end(self):
             pass
     
+
+    ### Validation section
+
+    ## Validation metrics
+
     def validation_step(self, batch, batch_idx):
         x = batch
         x_hat, mu, log_var, x = self.forward(x)
@@ -131,6 +152,19 @@ class beta_VAEModule(LightningModule):
 
         self.val_loss(loss)
         self.log("val/loss", self.val_loss, on_step=True, on_epoch=True, prog_bar=True)
+
+    # Compute Anderson-Darling distance and Absolute Kendall error
+
+    def on_validation_epoch_end(self):
+        # Generate samples and compute Anderson-Darling distance and Absolute Kendall error
+        z = torch.randn(len(self.val_data), self.latent_dim).to("cuda") # Generate latents N(0, I)
+        x_hat = self.decode(z)
+
+        self.val_AD(anderson_darling_distance(self.val_data, x_hat))
+        self.log("val/AD", self.val_AD, on_step=False, on_epoch=True, prog_bar=True)
+        
+        self.val_AK(normalised_kendall_tau_distance(self.val_data, x_hat))
+        self.log("val/AK", self.val_AK, on_step=False, on_epoch=True, prog_bar=True)
 
     def test_step(self, batch, batch_idx):
         x = batch

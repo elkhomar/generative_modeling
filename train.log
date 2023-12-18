@@ -12083,3 +12083,1160 @@ Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
 
 [2023-07-21 15:45:45,617][src.utils.utils][INFO] - Output dir: /home/kinetix/Documents/Hydra/lightning-hydra-template/logs/train/multiruns/2023-07-20_14-42-15/0
 [2023-07-21 15:45:45,617][src.utils.utils][INFO] - Closing wandb!
+[2023-12-13 16:28:30,458][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-13 16:28:30,470][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-13 16:28:30,581][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-13 16:28:30,873][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-13 16:28:30,893][__main__][INFO] - Instantiating callbacks...
+[2023-12-13 16:28:30,894][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-13 16:28:30,901][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-13 16:28:30,903][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-13 16:28:30,904][__main__][INFO] - Instantiating loggers...
+[2023-12-13 16:28:30,904][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-12-13 16:28:31,001][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-13 16:28:31,221][__main__][INFO] - Logging hyperparameters!
+[2023-12-13 16:28:38,877][__main__][INFO] - Starting training!
+[2023-12-13 16:28:38,888][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+                               ^^^^^^^^^^^^^^^^^^
+  File "src/train.py", line 91, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 545, in fit
+    call._call_and_handle_interrupt(
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 581, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 948, in _run
+    self.strategy.setup_environment()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/strategies/strategy.py", line 128, in setup_environment
+    self.accelerator.setup_device(self.root_device)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/accelerators/cuda.py", line 44, in setup_device
+    _check_cuda_matmul_precision(device)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/fabric/accelerators/cuda.py", line 348, in _check_cuda_matmul_precision
+    major, _ = torch.cuda.get_device_capability(device)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/cuda/__init__.py", line 435, in get_device_capability
+    prop = get_device_properties(device)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/cuda/__init__.py", line 449, in get_device_properties
+    _lazy_init()  # will define _get_device_properties
+    ^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/cuda/__init__.py", line 298, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero.
+[2023-12-13 16:28:38,892][src.utils.utils][INFO] - Output dir: /home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/logs/train/runs/2023-12-13_16-28-30
+[2023-12-13 16:28:38,893][src.utils.utils][INFO] - Closing wandb!
+[2023-12-13 16:30:29,011][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-13 16:30:29,023][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-13 16:30:29,133][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-13 16:30:29,410][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-13 16:30:29,420][__main__][INFO] - Instantiating callbacks...
+[2023-12-13 16:30:29,421][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-13 16:30:29,427][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-13 16:30:29,428][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-13 16:30:29,429][__main__][INFO] - Instantiating loggers...
+[2023-12-13 16:30:29,430][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-12-13 16:30:29,524][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-13 16:30:29,740][__main__][INFO] - Logging hyperparameters!
+[2023-12-13 16:30:37,067][__main__][INFO] - Starting training!
+[2023-12-13 16:30:37,075][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+                               ^^^^^^^^^^^^^^^^^^
+  File "src/train.py", line 91, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 545, in fit
+    call._call_and_handle_interrupt(
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 581, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 948, in _run
+    self.strategy.setup_environment()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/strategies/strategy.py", line 128, in setup_environment
+    self.accelerator.setup_device(self.root_device)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/accelerators/cuda.py", line 44, in setup_device
+    _check_cuda_matmul_precision(device)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/fabric/accelerators/cuda.py", line 348, in _check_cuda_matmul_precision
+    major, _ = torch.cuda.get_device_capability(device)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/cuda/__init__.py", line 435, in get_device_capability
+    prop = get_device_properties(device)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/cuda/__init__.py", line 449, in get_device_properties
+    _lazy_init()  # will define _get_device_properties
+    ^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/cuda/__init__.py", line 298, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero.
+[2023-12-13 16:30:37,079][src.utils.utils][INFO] - Output dir: /home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/logs/train/runs/2023-12-13_16-30-28
+[2023-12-13 16:30:37,080][src.utils.utils][INFO] - Closing wandb!
+[2023-12-13 16:35:41,325][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-13 16:35:41,337][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-13 16:35:41,451][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-13 16:35:41,816][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-13 16:35:41,833][__main__][INFO] - Instantiating callbacks...
+[2023-12-13 16:35:41,834][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-13 16:35:41,841][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-13 16:35:41,842][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-13 16:35:41,843][__main__][INFO] - Instantiating loggers...
+[2023-12-13 16:35:41,843][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-12-13 16:35:41,953][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-13 16:35:42,165][__main__][INFO] - Logging hyperparameters!
+[2023-12-13 16:35:49,697][__main__][INFO] - Starting training!
+[2023-12-13 16:35:49,720][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+                               ^^^^^^^^^^^^^^^^^^
+  File "src/train.py", line 91, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 545, in fit
+    call._call_and_handle_interrupt(
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 581, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 951, in _run
+    call._call_setup_hook(self)  # allow user to setup lightning_module in accelerator environment
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 92, in _call_setup_hook
+    _call_lightning_datamodule_hook(trainer, "setup", stage=fn)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 179, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/data/d_log_return.py", line 88, in setup
+    dataset= self.data,
+            ^^^^^^^^^
+AttributeError: 'DataModule' object has no attribute 'data'
+[2023-12-13 16:35:49,725][src.utils.utils][INFO] - Output dir: /home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/logs/train/runs/2023-12-13_16-35-41
+[2023-12-13 16:35:49,725][src.utils.utils][INFO] - Closing wandb!
+[2023-12-13 16:45:06,493][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-13 16:45:06,504][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-13 16:45:06,614][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-13 16:45:07,010][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-13 16:45:07,019][__main__][INFO] - Instantiating callbacks...
+[2023-12-13 16:45:07,020][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-13 16:45:07,027][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-13 16:45:07,028][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-13 16:45:07,029][__main__][INFO] - Instantiating loggers...
+[2023-12-13 16:45:07,029][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-12-13 16:45:07,125][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-13 16:45:07,330][__main__][INFO] - Logging hyperparameters!
+[2023-12-13 16:45:14,807][__main__][INFO] - Starting training!
+[2023-12-13 16:45:14,811][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+                               ^^^^^^^^^^^^^^^^^^
+  File "src/train.py", line 91, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 545, in fit
+    call._call_and_handle_interrupt(
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 581, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 951, in _run
+    call._call_setup_hook(self)  # allow user to setup lightning_module in accelerator environment
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 92, in _call_setup_hook
+    _call_lightning_datamodule_hook(trainer, "setup", stage=fn)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 179, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/data/d_log_return.py", line 88, in setup
+    self.data_val, self.data_test = random_split(
+                                    ^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/utils/data/dataset.py", line 419, in random_split
+    raise ValueError("Sum of input lengths does not equal the length of the input dataset!")
+ValueError: Sum of input lengths does not equal the length of the input dataset!
+[2023-12-13 16:45:14,815][src.utils.utils][INFO] - Output dir: /home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/logs/train/runs/2023-12-13_16-45-06
+[2023-12-13 16:45:14,816][src.utils.utils][INFO] - Closing wandb!
+[2023-12-13 16:47:54,348][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-13 16:47:54,360][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-13 16:47:54,361][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-12-13 16:47:54,455][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-13 16:47:54,824][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-13 16:47:54,833][__main__][INFO] - Instantiating callbacks...
+[2023-12-13 16:47:54,834][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-13 16:47:54,840][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-13 16:47:54,841][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-13 16:47:54,842][__main__][INFO] - Instantiating loggers...
+[2023-12-13 16:47:54,842][src.utils.instantiators][WARNING] - No logger configs found! Skipping...
+[2023-12-13 16:47:54,842][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-13 16:47:55,047][__main__][INFO] - Starting training!
+[2023-12-13 16:47:55,459][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+                               ^^^^^^^^^^^^^^^^^^
+  File "src/train.py", line 91, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 545, in fit
+    call._call_and_handle_interrupt(
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 581, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 990, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1034, in _run_stage
+    self._run_sanity_check()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1063, in _run_sanity_check
+    val_loop.run()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/utilities.py", line 181, in _decorator
+    return loop_run(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 127, in run
+    batch, batch_idx, dataloader_idx = next(data_fetcher)
+                                       ^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/fetchers.py", line 127, in __next__
+    batch = super().__next__()
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/fetchers.py", line 56, in __next__
+    batch = next(self.iterator)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/utilities/combined_loader.py", line 326, in __next__
+    out = next(self._iterator)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/utilities/combined_loader.py", line 132, in __next__
+    out = next(self.iterators[0])
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1345, in _next_data
+    return self._process_data(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1371, in _process_data
+    data.reraise()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/_utils.py", line 694, in reraise
+    raise exception
+RuntimeError: Caught RuntimeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 49, in fetch
+    data = self.dataset.__getitems__(possibly_batched_index)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/utils/data/dataset.py", line 364, in __getitems__
+    return [self.dataset[self.indices[idx]] for idx in indices]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/utils/data/dataset.py", line 364, in <listcomp>
+    return [self.dataset[self.indices[idx]] for idx in indices]
+            ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/data/d_log_return.py", line 26, in __getitem__
+    return self.data[index].reshape(-1)
+           ~~~~~~~~~^^^^^^^
+RuntimeError: CUDA error: initialization error
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+[2023-12-13 16:47:55,466][src.utils.utils][INFO] - Output dir: /home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/logs/train/runs/2023-12-13_16-47-54
+[2023-12-13 17:00:48,514][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-13 17:00:48,525][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-13 17:00:48,526][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-12-13 17:00:48,636][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-13 17:00:49,129][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-13 17:00:49,143][__main__][INFO] - Instantiating callbacks...
+[2023-12-13 17:00:49,143][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-13 17:00:49,150][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-13 17:00:49,151][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-13 17:00:49,152][__main__][INFO] - Instantiating loggers...
+[2023-12-13 17:00:49,153][src.utils.instantiators][WARNING] - No logger configs found! Skipping...
+[2023-12-13 17:00:49,153][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-13 17:00:49,364][__main__][INFO] - Starting training!
+[2023-12-13 17:00:49,785][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+                               ^^^^^^^^^^^^^^^^^^
+  File "src/train.py", line 91, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 545, in fit
+    call._call_and_handle_interrupt(
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 581, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 990, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1034, in _run_stage
+    self._run_sanity_check()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1063, in _run_sanity_check
+    val_loop.run()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/utilities.py", line 181, in _decorator
+    return loop_run(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 127, in run
+    batch, batch_idx, dataloader_idx = next(data_fetcher)
+                                       ^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/fetchers.py", line 127, in __next__
+    batch = super().__next__()
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/fetchers.py", line 56, in __next__
+    batch = next(self.iterator)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/utilities/combined_loader.py", line 326, in __next__
+    out = next(self._iterator)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/utilities/combined_loader.py", line 132, in __next__
+    out = next(self.iterators[0])
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1345, in _next_data
+    return self._process_data(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1371, in _process_data
+    data.reraise()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/_utils.py", line 694, in reraise
+    raise exception
+RuntimeError: Caught RuntimeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 49, in fetch
+    data = self.dataset.__getitems__(possibly_batched_index)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/utils/data/dataset.py", line 364, in __getitems__
+    return [self.dataset[self.indices[idx]] for idx in indices]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/utils/data/dataset.py", line 364, in <listcomp>
+    return [self.dataset[self.indices[idx]] for idx in indices]
+            ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/data/d_log_return.py", line 26, in __getitem__
+    return self.data[index].reshape(-1)
+           ~~~~~~~~~^^^^^^^
+RuntimeError: CUDA error: initialization error
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+[2023-12-13 17:00:49,793][src.utils.utils][INFO] - Output dir: /home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/logs/train/runs/2023-12-13_17-00-48
+[2023-12-13 17:01:55,583][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-13 17:01:55,595][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-13 17:01:55,596][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-12-13 17:01:55,694][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-13 17:01:55,989][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-13 17:01:55,999][__main__][INFO] - Instantiating callbacks...
+[2023-12-13 17:01:56,000][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-13 17:01:56,006][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-13 17:01:56,007][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-13 17:01:56,008][__main__][INFO] - Instantiating loggers...
+[2023-12-13 17:01:56,008][src.utils.instantiators][WARNING] - No logger configs found! Skipping...
+[2023-12-13 17:01:56,009][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-13 17:01:56,228][__main__][INFO] - Starting training!
+[2023-12-13 17:02:45,724][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-13 17:02:45,736][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-13 17:02:45,850][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-13 17:02:46,144][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-13 17:02:46,153][__main__][INFO] - Instantiating callbacks...
+[2023-12-13 17:02:46,154][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-13 17:02:46,160][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-13 17:02:46,161][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-13 17:02:46,162][__main__][INFO] - Instantiating loggers...
+[2023-12-13 17:02:46,162][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-12-13 17:02:46,261][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-13 17:02:46,485][__main__][INFO] - Logging hyperparameters!
+[2023-12-13 17:02:54,209][__main__][INFO] - Starting training!
+[2023-12-13 17:16:36,465][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-13 17:16:36,478][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-13 17:16:36,589][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-13 17:16:36,871][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-13 17:16:36,881][__main__][INFO] - Instantiating callbacks...
+[2023-12-13 17:16:36,882][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-13 17:16:36,888][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-13 17:16:36,889][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-13 17:16:36,890][__main__][INFO] - Instantiating loggers...
+[2023-12-13 17:16:36,890][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-12-13 17:16:36,988][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-13 17:16:37,209][__main__][INFO] - Logging hyperparameters!
+[2023-12-13 17:16:44,860][__main__][INFO] - Starting training!
+[2023-12-13 17:22:54,050][__main__][INFO] - Starting testing!
+[2023-12-13 17:22:54,077][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+                               ^^^^^^^^^^^^^^^^^^
+  File "src/train.py", line 102, in train
+    trainer.test(model=model, datamodule=datamodule, ckpt_path=ckpt_path)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 755, in test
+    return call._call_and_handle_interrupt(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 795, in _test_impl
+    results = self._run(model, ckpt_path=ckpt_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 990, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1029, in _run_stage
+    return self._evaluation_loop.run()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/utilities.py", line 181, in _decorator
+    return loop_run(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 109, in run
+    self.setup_data()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 165, in setup_data
+    dataloaders = _request_dataloader(source)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/connectors/data_connector.py", line 342, in _request_dataloader
+    return data_source.dataloader()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/connectors/data_connector.py", line 309, in dataloader
+    return call._call_lightning_datamodule_hook(self.instance.trainer, self.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 179, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/core/hooks.py", line 480, in test_dataloader
+    raise MisconfigurationException("`test_dataloader` must be implemented to be used with the Lightning Trainer")
+lightning.fabric.utilities.exceptions.MisconfigurationException: `test_dataloader` must be implemented to be used with the Lightning Trainer
+[2023-12-13 17:22:54,084][src.utils.utils][INFO] - Output dir: /home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/logs/train/runs/2023-12-13_17-16-36
+[2023-12-13 17:22:54,085][src.utils.utils][INFO] - Closing wandb!
+[2023-12-17 17:14:21,538][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-17 17:14:21,551][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-17 17:14:21,669][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-17 17:14:21,981][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-17 17:14:21,991][__main__][INFO] - Instantiating callbacks...
+[2023-12-17 17:14:21,991][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-17 17:14:21,997][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-17 17:14:21,998][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-17 17:14:21,999][__main__][INFO] - Instantiating loggers...
+[2023-12-17 17:14:22,000][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-12-17 17:14:22,098][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-17 17:14:22,324][__main__][INFO] - Logging hyperparameters!
+[2023-12-17 17:52:11,990][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-17 17:52:12,003][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-17 17:52:12,116][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-17 17:52:12,506][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-17 17:52:12,516][__main__][INFO] - Instantiating callbacks...
+[2023-12-17 17:52:12,516][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-17 17:52:12,523][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-17 17:52:12,524][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-17 17:52:12,525][__main__][INFO] - Instantiating loggers...
+[2023-12-17 17:52:12,525][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-12-17 17:52:12,611][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-17 17:52:12,845][__main__][INFO] - Logging hyperparameters!
+[2023-12-17 17:52:22,544][__main__][INFO] - Starting training!
+[2023-12-17 18:05:10,271][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-17 18:05:10,285][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-17 18:05:10,401][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-17 18:05:10,713][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-17 18:05:10,731][__main__][INFO] - Instantiating callbacks...
+[2023-12-17 18:05:10,732][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-17 18:05:10,738][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-17 18:05:10,739][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-17 18:05:10,740][__main__][INFO] - Instantiating loggers...
+[2023-12-17 18:05:10,740][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-12-17 18:05:10,826][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-17 18:05:11,052][__main__][INFO] - Logging hyperparameters!
+[2023-12-17 18:05:19,843][__main__][INFO] - Starting training!
+[2023-12-17 18:09:30,208][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-17 18:09:30,222][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-17 18:09:30,344][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-17 18:09:30,648][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-17 18:09:30,660][__main__][INFO] - Instantiating callbacks...
+[2023-12-17 18:09:30,661][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-17 18:09:30,667][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-17 18:09:30,668][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-17 18:09:30,669][__main__][INFO] - Instantiating loggers...
+[2023-12-17 18:09:30,669][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-12-17 18:09:30,757][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-17 18:09:30,980][__main__][INFO] - Logging hyperparameters!
+[2023-12-17 18:09:39,961][__main__][INFO] - Starting training!
+[2023-12-17 18:49:53,029][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-17 18:49:53,041][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-17 18:49:53,042][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-12-17 18:49:53,148][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-17 18:49:53,463][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-17 18:49:58,512][__main__][INFO] - Instantiating callbacks...
+[2023-12-17 18:49:58,513][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-17 18:49:58,525][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-17 18:49:58,526][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-17 18:49:58,527][__main__][INFO] - Instantiating loggers...
+[2023-12-17 18:49:58,527][src.utils.instantiators][WARNING] - No logger configs found! Skipping...
+[2023-12-17 18:49:58,528][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-17 18:49:58,750][__main__][INFO] - Starting training!
+[2023-12-17 18:53:30,738][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-17 18:53:30,750][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-17 18:53:30,751][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-12-17 18:53:30,850][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-17 18:53:31,151][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-17 18:53:34,252][__main__][INFO] - Instantiating callbacks...
+[2023-12-17 18:53:34,253][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-17 18:53:34,262][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-17 18:53:34,263][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-17 18:53:34,264][__main__][INFO] - Instantiating loggers...
+[2023-12-17 18:53:34,265][src.utils.instantiators][WARNING] - No logger configs found! Skipping...
+[2023-12-17 18:53:34,265][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-17 18:53:34,489][__main__][INFO] - Starting training!
+[2023-12-17 19:57:16,146][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-17 19:57:16,158][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-17 19:57:16,158][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-12-17 19:57:16,258][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-17 19:57:16,543][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-17 19:57:20,646][__main__][INFO] - Instantiating callbacks...
+[2023-12-17 19:57:20,648][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-17 19:57:20,658][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-17 19:57:20,659][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-17 19:57:20,660][__main__][INFO] - Instantiating loggers...
+[2023-12-17 19:57:20,661][src.utils.instantiators][WARNING] - No logger configs found! Skipping...
+[2023-12-17 19:57:20,661][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-17 19:57:20,885][__main__][INFO] - Starting training!
+[2023-12-17 19:58:58,965][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-17 19:58:58,977][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-17 19:58:58,977][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-12-17 19:58:59,074][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-17 19:58:59,363][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-17 19:59:03,739][__main__][INFO] - Instantiating callbacks...
+[2023-12-17 19:59:03,740][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-17 19:59:03,751][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-17 19:59:03,752][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-17 19:59:03,753][__main__][INFO] - Instantiating loggers...
+[2023-12-17 19:59:03,753][src.utils.instantiators][WARNING] - No logger configs found! Skipping...
+[2023-12-17 19:59:03,753][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-17 19:59:03,974][__main__][INFO] - Starting training!
+[2023-12-18 04:51:45,790][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-18 04:51:45,805][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-18 04:51:45,935][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-18 04:51:46,263][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-18 04:51:51,099][__main__][INFO] - Instantiating callbacks...
+[2023-12-18 04:51:51,099][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-18 04:51:51,107][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-18 04:51:51,108][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-18 04:51:51,109][__main__][INFO] - Instantiating loggers...
+[2023-12-18 04:51:51,109][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-12-18 04:51:51,200][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-18 04:51:51,423][__main__][INFO] - Logging hyperparameters!
+[2023-12-18 04:52:00,060][__main__][INFO] - Starting training!
+[2023-12-18 04:52:14,169][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+                               ^^^^^^^^^^^^^^^^^^
+  File "src/train.py", line 95, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 544, in fit
+    call._call_and_handle_interrupt(
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 580, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 989, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1033, in _run_stage
+    self._run_sanity_check()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1062, in _run_sanity_check
+    val_loop.run()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/utilities.py", line 182, in _decorator
+    return loop_run(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 141, in run
+    return self.on_run_end()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 253, in on_run_end
+    self._on_evaluation_epoch_end()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 329, in _on_evaluation_epoch_end
+    call._call_lightning_module_hook(trainer, hook_name)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 157, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/models/beta_vae_module.py", line 157, in on_validation_epoch_end
+    x_hat = self.decode(z)
+            ^^^^^^^^^^^^^^
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/models/beta_vae_module.py", line 84, in decode
+    return self.decoder(z)
+           ^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/nn/modules/container.py", line 215, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! (when checking argument for argument mat1 in method wrapper_CUDA_addmm)
+[2023-12-18 04:52:14,176][src.utils.utils][INFO] - Output dir: /home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/logs/train/runs/2023-12-18_04-51-45
+[2023-12-18 04:52:14,177][src.utils.utils][INFO] - Closing wandb!
+[2023-12-18 04:53:16,560][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-18 04:53:16,572][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-18 04:53:16,573][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-12-18 04:53:16,669][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-18 04:53:16,957][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-18 04:53:25,164][__main__][INFO] - Instantiating callbacks...
+[2023-12-18 04:53:25,165][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-18 04:53:25,170][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-18 04:53:25,172][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-18 04:53:25,173][__main__][INFO] - Instantiating loggers...
+[2023-12-18 04:53:25,173][src.utils.instantiators][WARNING] - No logger configs found! Skipping...
+[2023-12-18 04:53:25,174][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-18 04:53:25,391][__main__][INFO] - Starting training!
+[2023-12-18 04:53:34,736][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+                               ^^^^^^^^^^^^^^^^^^
+  File "src/train.py", line 95, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 544, in fit
+    call._call_and_handle_interrupt(
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 580, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 989, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1033, in _run_stage
+    self._run_sanity_check()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1062, in _run_sanity_check
+    val_loop.run()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/utilities.py", line 182, in _decorator
+    return loop_run(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 141, in run
+    return self.on_run_end()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 253, in on_run_end
+    self._on_evaluation_epoch_end()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 329, in _on_evaluation_epoch_end
+    call._call_lightning_module_hook(trainer, hook_name)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 157, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/models/beta_vae_module.py", line 159, in on_validation_epoch_end
+    self.val_AD(anderson_darling_distance(self.val_data, x_hat))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/custom_metrics.py", line 6, in anderson_darling_distance
+    generated_df = pd.DataFrame(generated_distribution.numpy())
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can't convert cuda:0 device type tensor to numpy. Use Tensor.cpu() to copy the tensor to host memory first.
+[2023-12-18 04:53:34,740][src.utils.utils][INFO] - Output dir: /home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/logs/train/runs/2023-12-18_04-53-16
+[2023-12-18 04:54:26,639][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-18 04:54:26,651][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-18 04:54:26,652][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-12-18 04:54:26,750][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-18 04:54:27,036][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-18 04:54:27,047][__main__][INFO] - Instantiating callbacks...
+[2023-12-18 04:54:27,047][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-18 04:54:27,053][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-18 04:54:27,054][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-18 04:54:27,055][__main__][INFO] - Instantiating loggers...
+[2023-12-18 04:54:27,055][src.utils.instantiators][WARNING] - No logger configs found! Skipping...
+[2023-12-18 04:54:27,056][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-18 04:54:27,272][__main__][INFO] - Starting training!
+[2023-12-18 04:54:41,418][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/numpy/core/fromnumeric.py", line 59, in _wrapfunc
+    return bound(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^
+TypeError: argsort() missing 1 required positional arguments: "stable"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+                               ^^^^^^^^^^^^^^^^^^
+  File "src/train.py", line 95, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 544, in fit
+    call._call_and_handle_interrupt(
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 580, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 989, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1033, in _run_stage
+    self._run_sanity_check()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1062, in _run_sanity_check
+    val_loop.run()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/utilities.py", line 182, in _decorator
+    return loop_run(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 141, in run
+    return self.on_run_end()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 253, in on_run_end
+    self._on_evaluation_epoch_end()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 329, in _on_evaluation_epoch_end
+    call._call_lightning_module_hook(trainer, hook_name)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 157, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/models/beta_vae_module.py", line 162, in on_validation_epoch_end
+    self.val_AK(normalised_kendall_tau_distance(self.val_data, x_hat))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/custom_metrics.py", line 47, in normalised_kendall_tau_distance
+    b = np.argsort(generated_distribution)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/numpy/core/fromnumeric.py", line 1133, in argsort
+    return _wrapfunc(a, 'argsort', axis=axis, kind=kind, order=order)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/numpy/core/fromnumeric.py", line 68, in _wrapfunc
+    return _wrapit(obj, method, *args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/numpy/core/fromnumeric.py", line 45, in _wrapit
+    result = getattr(asarray(obj), method)(*args, **kwds)
+                     ^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/_tensor.py", line 1030, in __array__
+    return self.numpy()
+           ^^^^^^^^^^^^
+TypeError: can't convert cuda:0 device type tensor to numpy. Use Tensor.cpu() to copy the tensor to host memory first.
+[2023-12-18 04:54:41,423][src.utils.utils][INFO] - Output dir: /home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/logs/train/runs/2023-12-18_04-54-26
+[2023-12-18 04:55:33,733][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-18 04:55:33,745][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-18 04:55:33,746][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-12-18 04:55:33,841][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-18 04:55:34,129][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-18 04:55:34,139][__main__][INFO] - Instantiating callbacks...
+[2023-12-18 04:55:34,140][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-18 04:55:34,146][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-18 04:55:34,147][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-18 04:55:34,148][__main__][INFO] - Instantiating loggers...
+[2023-12-18 04:55:34,148][src.utils.instantiators][WARNING] - No logger configs found! Skipping...
+[2023-12-18 04:55:34,148][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-18 04:55:34,364][__main__][INFO] - Starting training!
+[2023-12-18 04:55:41,337][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+                               ^^^^^^^^^^^^^^^^^^
+  File "src/train.py", line 95, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 544, in fit
+    call._call_and_handle_interrupt(
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 580, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 989, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1033, in _run_stage
+    self._run_sanity_check()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1062, in _run_sanity_check
+    val_loop.run()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/utilities.py", line 182, in _decorator
+    return loop_run(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 141, in run
+    return self.on_run_end()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 253, in on_run_end
+    self._on_evaluation_epoch_end()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 329, in _on_evaluation_epoch_end
+    call._call_lightning_module_hook(trainer, hook_name)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 157, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/models/beta_vae_module.py", line 163, in on_validation_epoch_end
+    self.log("val/AD", self.val_AK, on_step=False, on_epoch=True, prog_bar=True)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/core/module.py", line 500, in log
+    results.log(
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/connectors/logger_connector/result.py", line 402, in log
+    raise MisconfigurationException(
+lightning.fabric.utilities.exceptions.MisconfigurationException: You called `self.log(val/AD, ...)` twice in `on_validation_epoch_end` with different arguments. This is not allowed
+[2023-12-18 04:55:41,341][src.utils.utils][INFO] - Output dir: /home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/logs/train/runs/2023-12-18_04-55-33
+[2023-12-18 04:56:04,985][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-18 04:56:04,997][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-18 04:56:04,997][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-12-18 04:56:05,092][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-18 04:56:05,376][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-18 04:56:05,388][__main__][INFO] - Instantiating callbacks...
+[2023-12-18 04:56:05,388][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-18 04:56:05,394][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-18 04:56:05,395][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-18 04:56:05,396][__main__][INFO] - Instantiating loggers...
+[2023-12-18 04:56:05,396][src.utils.instantiators][WARNING] - No logger configs found! Skipping...
+[2023-12-18 04:56:05,396][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-18 04:56:05,615][__main__][INFO] - Starting training!
+[2023-12-18 04:56:48,272][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-18 04:56:48,284][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-18 04:56:48,392][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-18 04:56:48,707][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-18 04:56:48,717][__main__][INFO] - Instantiating callbacks...
+[2023-12-18 04:56:48,717][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-18 04:56:48,723][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-18 04:56:48,724][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-18 04:56:48,725][__main__][INFO] - Instantiating loggers...
+[2023-12-18 04:56:48,725][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-12-18 04:56:48,809][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-18 04:56:49,028][__main__][INFO] - Logging hyperparameters!
+[2023-12-18 04:56:57,607][__main__][INFO] - Starting training!
+[2023-12-18 05:00:59,443][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+                               ^^^^^^^^^^^^^^^^^^
+  File "src/train.py", line 96, in train
+    trainer.save_checkpoint(cfg.paths.output_dir + "/checkpoints/last.ckpt")
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1383, in save_checkpoint
+    self.strategy.save_checkpoint(checkpoint, filepath, storage_options=storage_options)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/strategies/strategy.py", line 482, in save_checkpoint
+    self.checkpoint_io.save_checkpoint(checkpoint, filepath, storage_options=storage_options)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/fabric/plugins/io/torch_io.py", line 55, in save_checkpoint
+    _atomic_save(checkpoint, path)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/fabric/utilities/cloud_io.py", line 76, in _atomic_save
+    torch.save(checkpoint, bytesbuffer)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/serialization.py", line 619, in save
+    _save(obj, opened_zipfile, pickle_module, pickle_protocol, _disable_byteorder_record)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/serialization.py", line 850, in _save
+    storage = storage.cpu()
+              ^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/storage.py", line 134, in cpu
+    return torch.UntypedStorage(self.size()).copy_(self, False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: CUDA error: initialization error
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[2023-12-18 05:00:59,447][src.utils.utils][INFO] - Output dir: /home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/logs/train/runs/2023-12-18_04-56-48
+[2023-12-18 05:00:59,448][src.utils.utils][INFO] - Closing wandb!
+[2023-12-18 05:00:59,446][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+                               ^^^^^^^^^^^^^^^^^^
+  File "src/train.py", line 96, in train
+    trainer.save_checkpoint(cfg.paths.output_dir + "/checkpoints/last.ckpt")
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1383, in save_checkpoint
+    self.strategy.save_checkpoint(checkpoint, filepath, storage_options=storage_options)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/strategies/strategy.py", line 482, in save_checkpoint
+    self.checkpoint_io.save_checkpoint(checkpoint, filepath, storage_options=storage_options)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/fabric/plugins/io/torch_io.py", line 55, in save_checkpoint
+    _atomic_save(checkpoint, path)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/fabric/utilities/cloud_io.py", line 76, in _atomic_save
+    torch.save(checkpoint, bytesbuffer)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/serialization.py", line 619, in save
+    _save(obj, opened_zipfile, pickle_module, pickle_protocol, _disable_byteorder_record)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/serialization.py", line 850, in _save
+    storage = storage.cpu()
+              ^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/storage.py", line 134, in cpu
+    return torch.UntypedStorage(self.size()).copy_(self, False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: CUDA error: initialization error
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[2023-12-18 05:00:59,446][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+                               ^^^^^^^^^^^^^^^^^^
+  File "src/train.py", line 96, in train
+    trainer.save_checkpoint(cfg.paths.output_dir + "/checkpoints/last.ckpt")
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1383, in save_checkpoint
+    self.strategy.save_checkpoint(checkpoint, filepath, storage_options=storage_options)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/strategies/strategy.py", line 482, in save_checkpoint
+    self.checkpoint_io.save_checkpoint(checkpoint, filepath, storage_options=storage_options)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/fabric/plugins/io/torch_io.py", line 55, in save_checkpoint
+    _atomic_save(checkpoint, path)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/fabric/utilities/cloud_io.py", line 76, in _atomic_save
+    torch.save(checkpoint, bytesbuffer)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/serialization.py", line 619, in save
+    _save(obj, opened_zipfile, pickle_module, pickle_protocol, _disable_byteorder_record)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/serialization.py", line 850, in _save
+    storage = storage.cpu()
+              ^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/storage.py", line 134, in cpu
+    return torch.UntypedStorage(self.size()).copy_(self, False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: CUDA error: initialization error
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[2023-12-18 05:00:59,451][src.utils.utils][INFO] - Output dir: /home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/logs/train/runs/2023-12-18_04-56-48
+[2023-12-18 05:00:59,452][src.utils.utils][INFO] - Closing wandb!
+[2023-12-18 05:00:59,452][src.utils.utils][INFO] - Output dir: /home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/logs/train/runs/2023-12-18_04-56-48
+[2023-12-18 05:00:59,452][src.utils.utils][INFO] - Closing wandb!
+[2023-12-18 05:01:00,222][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+                               ^^^^^^^^^^^^^^^^^^
+  File "src/train.py", line 95, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 544, in fit
+    call._call_and_handle_interrupt(
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 580, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 989, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1035, in _run_stage
+    self.fit_loop.run()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/fit_loop.py", line 202, in run
+    self.advance()
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/fit_loop.py", line 359, in advance
+    self.epoch_loop.run(self._data_fetcher)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/training_epoch_loop.py", line 136, in run
+    self.advance(data_fetcher)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/training_epoch_loop.py", line 202, in advance
+    batch, _, __ = next(data_fetcher)
+                   ^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/fetchers.py", line 127, in __next__
+    batch = super().__next__()
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/loops/fetchers.py", line 56, in __next__
+    batch = next(self.iterator)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/utilities/combined_loader.py", line 326, in __next__
+    out = next(self._iterator)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/lightning/pytorch/utilities/combined_loader.py", line 74, in __next__
+    out[i] = next(self.iterators[i])
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1328, in _next_data
+    idx, data = self._get_data()
+                ^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1294, in _get_data
+    success, data = self._try_get_data()
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1132, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/multiprocessing/queues.py", line 122, in get
+    return _ForkingPickler.loads(res)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/torch/multiprocessing/reductions.py", line 355, in rebuild_storage_fd
+    fd = df.detach()
+         ^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/multiprocessing/resource_sharer.py", line 57, in detach
+    with _resource_sharer.get_connection(self._id) as conn:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/multiprocessing/resource_sharer.py", line 86, in get_connection
+    c = Client(address, authkey=process.current_process().authkey)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/multiprocessing/connection.py", line 501, in Client
+    c = SocketClient(address)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/multiprocessing/connection.py", line 629, in SocketClient
+    s.connect(address)
+FileNotFoundError: [Errno 2] No such file or directory
+[2023-12-18 05:01:00,236][src.utils.utils][INFO] - Output dir: /home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/logs/train/runs/2023-12-18_04-56-48
+[2023-12-18 05:01:00,236][src.utils.utils][INFO] - Closing wandb!
+[2023-12-18 05:04:06,000][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-18 05:04:06,012][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-18 05:04:06,120][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-18 05:04:06,420][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-18 05:04:06,431][__main__][INFO] - Instantiating callbacks...
+[2023-12-18 05:04:06,432][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-18 05:04:06,438][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-18 05:04:06,439][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-18 05:04:06,439][__main__][INFO] - Instantiating loggers...
+[2023-12-18 05:04:06,440][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-12-18 05:04:06,523][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-18 05:04:06,738][__main__][INFO] - Logging hyperparameters!
+[2023-12-18 05:04:15,029][__main__][INFO] - Starting training!
+[2023-12-18 05:12:20,972][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-18 05:12:20,984][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-18 05:12:21,091][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-18 05:12:21,378][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-18 05:12:21,389][__main__][INFO] - Instantiating callbacks...
+[2023-12-18 05:12:21,390][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-18 05:12:21,395][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-18 05:12:21,396][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-18 05:12:21,397][__main__][INFO] - Instantiating loggers...
+[2023-12-18 05:12:21,398][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-12-18 05:12:21,480][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-18 05:12:21,697][__main__][INFO] - Logging hyperparameters!
+[2023-12-18 05:12:30,447][__main__][INFO] - Starting training!
+[2023-12-18 05:23:13,194][__main__][INFO] - Starting testing!
+[2023-12-18 05:23:13,195][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+                               ^^^^^^^^^^^^^^^^^^
+  File "src/train.py", line 106, in train
+    trainer.generative_test(model=model, datamodule=datamodule, ckpt_path=ckpt_path)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Trainer' object has no attribute 'generative_test'
+[2023-12-18 05:23:13,198][src.utils.utils][INFO] - Output dir: /home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/logs/train/runs/2023-12-18_05-12-20
+[2023-12-18 05:23:13,198][src.utils.utils][INFO] - Closing wandb!
+[2023-12-18 11:07:27,464][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-18 11:07:27,476][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-18 11:07:27,476][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-12-18 11:07:27,581][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-18 11:07:27,953][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-18 11:07:27,964][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/omegaconf/listconfig.py", line 215, in __getitem__
+    key=index, value=self.__dict__["_content"][index]
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+IndexError: list index out of range
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 92, in _call_target
+    return _target_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/models/beta_vae_module.py", line 40, in __init__
+    nn.Linear(encoder_dims[1], encoder_dims[2]),
+                               ~~~~~~~~~~~~^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/omegaconf/listconfig.py", line 218, in __getitem__
+    self._format_and_raise(key=index, value=None, cause=e)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/omegaconf/base.py", line 231, in _format_and_raise
+    format_and_raise(
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/omegaconf/_utils.py", line 899, in format_and_raise
+    _raise(ex, cause)
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/omegaconf/_utils.py", line 797, in _raise
+    raise ex.with_traceback(sys.exc_info()[2])  # set env var OC_CAUSE=1 for full trace
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/omegaconf/listconfig.py", line 215, in __getitem__
+    key=index, value=self.__dict__["_content"][index]
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+omegaconf.errors.ConfigIndexError: list index out of range
+    full_key: [2]
+    object_type=list
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+                               ^^^^^^^^^^^^^^^^^^
+  File "src/train.py", line 61, in train
+    model: LightningModule = hydra.utils.instantiate(cfg.model)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 347, in instantiate_node
+    return _call_target(_target_, partial, args, kwargs, full_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omar/anaconda3/envs/torch-env/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 97, in _call_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error in call to target 'src.models.beta_vae_module.beta_VAEModule':
+ConfigIndexError('list index out of range\n    full_key: [2]\n    object_type=list')
+full_key: model
+[2023-12-18 11:07:27,968][src.utils.utils][INFO] - Output dir: /home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/logs/train/runs/2023-12-18_11-07-27
+[2023-12-18 11:08:21,237][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-18 11:08:21,249][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-18 11:08:21,250][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-12-18 11:08:21,353][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-18 11:08:21,645][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-18 11:08:21,666][__main__][INFO] - Instantiating callbacks...
+[2023-12-18 11:08:21,667][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-18 11:08:21,673][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-18 11:08:21,674][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-18 11:08:21,675][__main__][INFO] - Instantiating loggers...
+[2023-12-18 11:08:21,676][src.utils.instantiators][WARNING] - No logger configs found! Skipping...
+[2023-12-18 11:08:21,676][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-18 11:08:21,904][__main__][INFO] - Starting training!
+[2023-12-18 11:08:51,153][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-18 11:08:51,166][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-18 11:08:51,167][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-12-18 11:08:51,272][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-18 11:08:51,570][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-18 11:08:51,584][__main__][INFO] - Instantiating callbacks...
+[2023-12-18 11:08:51,584][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-18 11:08:51,590][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-18 11:08:51,591][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-18 11:08:51,592][__main__][INFO] - Instantiating loggers...
+[2023-12-18 11:08:51,593][src.utils.instantiators][WARNING] - No logger configs found! Skipping...
+[2023-12-18 11:08:51,593][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-18 11:08:51,813][__main__][INFO] - Starting training!
+[2023-12-18 11:10:39,736][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-18 11:10:39,748][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-18 11:10:39,868][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-18 11:10:40,161][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-18 11:10:40,174][__main__][INFO] - Instantiating callbacks...
+[2023-12-18 11:10:40,175][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-18 11:10:40,181][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-18 11:10:40,182][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-18 11:10:40,183][__main__][INFO] - Instantiating loggers...
+[2023-12-18 11:10:40,183][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-12-18 11:10:40,279][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-18 11:10:40,506][__main__][INFO] - Logging hyperparameters!
+[2023-12-18 11:10:49,782][__main__][INFO] - Starting training!
+[2023-12-18 11:32:22,766][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-18 11:32:22,779][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-18 11:32:22,913][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-18 11:32:23,211][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-18 11:32:23,224][__main__][INFO] - Instantiating callbacks...
+[2023-12-18 11:32:23,225][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-18 11:32:23,231][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-18 11:32:23,232][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-18 11:32:23,233][__main__][INFO] - Instantiating loggers...
+[2023-12-18 11:32:23,233][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-12-18 11:32:23,321][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-18 11:32:23,544][__main__][INFO] - Logging hyperparameters!
+[2023-12-18 11:32:31,105][__main__][INFO] - Starting training!
+[2023-12-18 11:43:59,023][__main__][INFO] - Starting testing!
+[2023-12-18 11:43:59,030][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/src/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+                               ^^^^^^^^^^^^^^^^^^
+  File "src/train.py", line 106, in train
+    trainer.generative_test(model=model, datamodule=datamodule, ckpt_path=ckpt_path)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Trainer' object has no attribute 'generative_test'
+[2023-12-18 11:43:59,032][src.utils.utils][INFO] - Output dir: /home/omar/Projects/repos/Ml/Generative_models/lightning-hydra-template/logs/train/runs/2023-12-18_11-32-22
+[2023-12-18 11:43:59,033][src.utils.utils][INFO] - Closing wandb!
+[2023-12-18 11:45:21,339][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-12-18 11:45:21,351][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-12-18 11:45:21,471][__main__][INFO] - Instantiating datamodule <src.data.d_log_return.DataModule>
+[2023-12-18 11:45:21,776][__main__][INFO] - Instantiating model <src.models.beta_vae_module.beta_VAEModule>
+[2023-12-18 11:45:21,790][__main__][INFO] - Instantiating callbacks...
+[2023-12-18 11:45:21,791][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-12-18 11:45:21,798][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-12-18 11:45:21,799][src.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-12-18 11:45:21,800][__main__][INFO] - Instantiating loggers...
+[2023-12-18 11:45:21,800][src.utils.instantiators][INFO] - Instantiating logger <lightning.pytorch.loggers.wandb.WandbLogger>
+[2023-12-18 11:45:21,889][__main__][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-12-18 11:45:22,120][__main__][INFO] - Logging hyperparameters!
+[2023-12-18 11:45:30,380][__main__][INFO] - Starting training!
