@@ -79,16 +79,24 @@ def absolute_kendall_error_torch(X_og, X_gen):
     d = X_og.shape[1]
     n = X_og.shape[0]
     def pseudo_obs(x):
-        n = X_og.shape()
-        return 1/(n-1)
+        zi = [(1/(n-1))*torch.sum(
+            (x[i, 0] > x[:, 0]) &
+            (x[i, 1] > x[:, 1]) & 
+            (x[i, 2] > x[:, 2]) &
+            (x[i, 3] > x[:, 3]))
+              for i in range(n)]
+        
+        zi.sort()
+        return torch.tensor(zi)
     
-    return d
-
-df = torch.arange(4000).reshape(1000, 4)
-df_fake = torch.arange(1000, 5000).reshape(1000, 4)
-anderson_darling_distance(df_fake, df)
+    zin = pseudo_obs(X_og)
+    zin_tilde = pseudo_obs(X_gen)
+    ld = (zin-zin_tilde).abs().sum()/n
+    return ld
 
 
 df = torch.randn(1000, 4)
 df_fake = torch.randn(1000, 4)
-absolute_kendall_error((df_fake-2)**2, (df-2)**2)
+absolute_kendall_error_torch(df, df_fake)
+a = [[absolute_kendall_error_torch((i)*torch.randn(1000, 4) + (j),torch.randn(1000, 4))for i in range(10)] for j in range(12)]
+a
