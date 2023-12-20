@@ -1,4 +1,4 @@
-_target_: src.models.beta_vae_module.beta_VAEModule
+_target_: src.models.m_beta_vae_module.beta_VAEModule
 
 optimizer:
   _target_: torch.optim.Adam
@@ -16,14 +16,17 @@ scheduler:
   
 input_dim: null
 
-latent_dim: 2
+latent_dim: 16
 
 encoder_dims:
-  - 3
-  - 3
-  - 3
+  - 256 
+  - 124
+  - 64
 decoder_dims:
-  - 3
-  - 3
-  - 3
+  - 64
+  - 124
+  - 256
+
 beta : 1
+
+predict_log : False

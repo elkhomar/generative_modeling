@@ -1,0 +1,32 @@
+_target_: src.models.m_beta_vae_module.beta_VAEModule
+
+optimizer:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 0.001
+  weight_decay: 0.0
+
+scheduler:
+  _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+  _partial_: true
+  mode: min
+  
+  factor: 0
+  patience: 10
+  
+input_dim: null
+
+latent_dim: 2
+
+encoder_dims:
+  - 3
+  - 3
+  - 3
+decoder_dims:
+  - 3
+  - 3
+  - 3
+
+beta : 1
+
+predict_log : False

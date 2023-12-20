@@ -13,10 +13,15 @@ from torch.utils.data import Dataset
 from pathlib import Path
 
 # The dataset 
+
 class log_returns_Dataset(Dataset):
+
     def __init__(self, root_path):
         df = pd.read_csv(Path(root_path), sep=',', header=None)
         tensor = torch.from_numpy(df.values).float()
+
+        self.mean = tensor[:, 1:].mean(dim=0)
+        self.std = tensor[:, 1:].std(dim=0)
         self.data = tensor[:, 1:]
 
     def __len__(self):
@@ -25,7 +30,6 @@ class log_returns_Dataset(Dataset):
     def __getitem__(self, index):
         return self.data[index].reshape(-1)
     
-
 class DataModule(LightningDataModule):
     """Example preprocessing and batching poses
 
@@ -60,6 +64,7 @@ class DataModule(LightningDataModule):
         batch_size: int = 8,
         num_workers: int = 0,
         pin_memory: bool = False,
+        normalize=True,
     ):
         super().__init__()
 
@@ -83,10 +88,10 @@ class DataModule(LightningDataModule):
         careful not to execute things like random split twice!
         """
 
-        if not self.data_train and not self.data_val :
+        if not self.data_train and not self.data_val:
             # Training and Val set
             self.data_train, self.data_val = random_split(
-                dataset= self.data, 
+                dataset= self.data,
                 lengths= [int(self.train_val_split[0]*len(self.data)) + 1, int(self.train_val_split[1]*len(self.data))],
                 generator=torch.Generator().manual_seed(42),
             )
@@ -108,7 +113,16 @@ class DataModule(LightningDataModule):
             pin_memory=self.hparams.pin_memory,
             shuffle=False,
         )
-
+    
+    def test_dataloader(self):
+        return DataLoader(
+            dataset=self.data_val,
+            batch_size=self.hparams.batch_size,
+            num_workers=self.hparams.num_workers,
+            pin_memory=self.hparams.pin_memory,
+            shuffle=False,
+        )
+    
     def teardown(self, stage: Optional[str] = None):
         """Clean up after fit or test."""
         pass
@@ -126,7 +140,8 @@ class DataModule(LightningDataModule):
 
 
 if __name__ == "__main__":
-    
     _ = DataModule()
-    dataset = log_returns_Dataset("data/financial_data/data_train_log_return.csv")
+    dataset = log_returns_Dataset(
+        "data/financial_data/data_train_log_return.csv"
+    )
     print(dataset.get_pose(0))

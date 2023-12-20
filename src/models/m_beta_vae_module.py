@@ -4,8 +4,9 @@ import torch.nn.functional as F
 from torch.utils.data import DataLoader
 from lightning import LightningModule
 from torchmetrics import MaxMetric, MeanMetric
-from src.custom_metrics import normalised_kendall_tau_distance, anderson_darling_distance
-
+from src.custom_metrics import absolute_kendall_error, anderson_darling_distance
+from src.visualisations import 
+import seaborn as sns
 
 
  
@@ -15,10 +16,11 @@ class beta_VAEModule(LightningModule):
                  scheduler: torch.optim.lr_scheduler,
                  input_dim,
                  latent_dim,
-                 encoder_dims, 
+                 encoder_dims,
                  decoder_dims,
-                 beta=1.0
-    ):
+                 beta=1.0,
+                 predict_log=True,
+                ):
         super().__init__()
 
         # this line allows to access init params with 'self.hparams' attribute
@@ -29,6 +31,8 @@ class beta_VAEModule(LightningModule):
         self.latent_dim = latent_dim
 
         self.beta = self.hparams.beta
+        self.predict_log = predict_log
+
         self.mse = nn.MSELoss(reduction="mean")
 
         # Encoder
@@ -85,7 +89,7 @@ class beta_VAEModule(LightningModule):
         return mu, log_var
 
     def decode(self, z):
-        return self.decoder(z)
+        return self.decoder(z) # use .exp() to make a lognormal prior
 
     def reparameterize(self, mu, log_var):
         std = torch.exp(0.5 * log_var)
@@ -107,12 +111,11 @@ class beta_VAEModule(LightningModule):
 
     def loss_function(self, x_hat, x, mu, log_var):
         # Reconstruction loss
-        mse = self.mse(x_hat, x)
+        mse = self.mse(x_hat, x) if self.predict_log else self.mse(x_hat, x.log())
 
         # KL divergence loss
         kld = torch.mean(-0.5 * torch.sum(1 + log_var - mu.pow(2) - log_var.exp(), axis=1))
         return (mse + self.beta * kld, mse, kld)
-
     
     def training_step(self, batch, batch_idx):
         x = batch
@@ -131,7 +134,7 @@ class beta_VAEModule(LightningModule):
         return loss
 
     def on_train_epoch_end(self):
-            pass
+        pass
     
 
     ### Validation section
@@ -160,11 +163,19 @@ class beta_VAEModule(LightningModule):
         z = torch.randn(len(self.val_data), self.latent_dim).to("cuda") # Generate latents N(0, I)
         x_hat = self.decode(z)
 
-        self.val_AD(anderson_darling_distance(self.val_data, x_hat))
+        x = self.val_data if self.predict_log else self.val_data.log()
+
+        self.val_AD(anderson_darling_distance(x, x_hat))
         self.log("val/AD", self.val_AD, on_step=False, on_epoch=True, prog_bar=True)
         
-        self.val_AK(normalised_kendall_tau_distance(self.val_data, x_hat))
+        self.val_AK(absolute_kendall_error(x, x_hat))
         self.log("val/AK", self.val_AK, on_step=False, on_epoch=True, prog_bar=True)
+
+        if(self.current_epoch%10 == 0):
+            # Create histograms of generated samples with seaborn
+            sns.displot(x_hat.to("cpu").numpy(), kind="kde", fill=True)
+            
+
 
     def test_step(self, batch, batch_idx):
         x = batch

@@ -5,7 +5,7 @@
 
 defaults:
   - override /data: d_log_return.yaml
-  - override /model: beta_vae.yaml
+  - override /model: m_beta_vae.yaml
   - override /trainer: default.yaml
 #  - override /logger: null
 
@@ -18,14 +18,13 @@ seed: 42
 
 
 trainer:
-  min_epochs: 90
-  max_epochs: 100
+  min_epochs: 60
+  max_epochs: 60
 
 model:
   optimizer:
     lr: 0.001
+  predict_log: False
 
 data:
-  batch_size: 1
-
-#  
+  batch_size: 16

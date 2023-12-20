@@ -3,8 +3,8 @@
 defaults:
   - _self_
 
-  - data: lafan.yaml
-  - model: beta_vae.yaml
+  - data: d_log_return.yaml
+  - model: m_beta_vae.yaml
   - logger: wandb.yaml # set logger here or use command line (e.g. `python train.py logger=tensorboard`)
   - trainer: gpu.yaml
   - paths: default.yaml

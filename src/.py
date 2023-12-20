@@ -75,15 +75,6 @@ def absolute_kendall_error(X_og, X_gen):
     Z_gen=pseudo_obs(np.array(X_gen.to("cpu").numpy()))
     return np.linalg.norm(np.sort(Z_og)-np.sort(Z_gen), 1)
 
-def absolute_kendall_error_torch(X_og, X_gen):
-    d = X_og.shape[1]
-    n = X_og.shape[0]
-    def pseudo_obs(x):
-        n = X_og.shape()
-        return 1/(n-1)
-    
-    return d
-
 df = torch.arange(4000).reshape(1000, 4)
 df_fake = torch.arange(1000, 5000).reshape(1000, 4)
 anderson_darling_distance(df_fake, df)
