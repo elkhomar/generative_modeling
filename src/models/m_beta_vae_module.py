@@ -5,9 +5,8 @@ from torch.utils.data import DataLoader
 from lightning import LightningModule
 from torchmetrics import MaxMetric, MeanMetric
 from src.custom_metrics import absolute_kendall_error, anderson_darling_distance
-from src.visualisations import 
+from src.visualisations import log_pairplots
 import seaborn as sns
-
 
  
 class beta_VAEModule(LightningModule):
@@ -20,7 +19,7 @@ class beta_VAEModule(LightningModule):
                  decoder_dims,
                  beta=1.0,
                  predict_log=True,
-                ):
+                 ):
         super().__init__()
 
         # this line allows to access init params with 'self.hparams' attribute
@@ -60,7 +59,11 @@ class beta_VAEModule(LightningModule):
             nn.Linear(decoder_dims[2], input_dim)
         )
 
-        # for averaging loss across batches
+        # Non standard passes (should be changed)
+        self.val_data = None
+        self.log_dir = None
+
+        # Metrics
         self.train_loss = MeanMetric()
         self.train_mse = MeanMetric()
         self.train_kl = MeanMetric()
@@ -77,19 +80,14 @@ class beta_VAEModule(LightningModule):
         self.test_mse = MeanMetric()
         self.test_kl = MeanMetric()
 
-
-
-    ### Training section
-
-
-
+    # Training section
     def encode(self, x):
         mu = self.mu(self.encoder(x))
         log_var = self.log_var(self.encoder(x))
         return mu, log_var
 
     def decode(self, z):
-        return self.decoder(z) # use .exp() to make a lognormal prior
+        return self.decoder(z)  # use .exp() to make a lognormal prior
 
     def reparameterize(self, mu, log_var):
         std = torch.exp(0.5 * log_var)
@@ -101,7 +99,7 @@ class beta_VAEModule(LightningModule):
         z = self.reparameterize(mu, log_var)
         x_hat = self.decode(z)
         return x_hat, mu, log_var, x
-    
+
     def on_train_start(self):
         # by default lightning executes validation step sanity checks before training starts,
         # so it's worth to make sure validation metrics don't store results from these checks
@@ -116,7 +114,7 @@ class beta_VAEModule(LightningModule):
         # KL divergence loss
         kld = torch.mean(-0.5 * torch.sum(1 + log_var - mu.pow(2) - log_var.exp(), axis=1))
         return (mse + self.beta * kld, mse, kld)
-    
+
     def training_step(self, batch, batch_idx):
         x = batch
         x_hat, mu, log_var, x = self.forward(x)
@@ -171,9 +169,9 @@ class beta_VAEModule(LightningModule):
         self.val_AK(absolute_kendall_error(x, x_hat))
         self.log("val/AK", self.val_AK, on_step=False, on_epoch=True, prog_bar=True)
 
-        if(self.current_epoch%10 == 0):
+        if (self.current_epoch % 1 == 0):
             # Create histograms of generated samples with seaborn
-            sns.displot(x_hat.to("cpu").numpy(), kind="kde", fill=True)
+            log_pairplots(x_hat, x, self.current_epoch, self.log_dir + "/visualisations/")
             
 
 

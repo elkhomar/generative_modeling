@@ -84,11 +84,11 @@ def absolute_kendall_error_torch(X_og, X_gen):
     
     return d
 
-df = torch.arange(4000).reshape(1000, 4)
-df_fake = torch.arange(1000, 5000).reshape(1000, 4)
-anderson_darling_distance(df_fake, df)
+# df = torch.arange(4000).reshape(1000, 4)
+# df_fake = torch.arange(1000, 5000).reshape(1000, 4)
+# anderson_darling_distance(df_fake, df)
 
 
-df = torch.randn(1000, 4)
-df_fake = torch.randn(1000, 4)
-absolute_kendall_error((df_fake-2)**2, (df-2)**2)
+# df = torch.randn(1000, 4)
+# df_fake = torch.randn(1000, 4)
+# absolute_kendall_error((df_fake-2)**2, (df-2)**2)

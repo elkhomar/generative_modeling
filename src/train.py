@@ -89,10 +89,14 @@ def train(cfg: DictConfig) -> Tuple[dict, dict]:
     if cfg.get("train"):
         log.info("Starting training!")
         
-        datamodule.setup() # Used for validation metrics (AD, KT)
+        datamodule.setup()  # Used for validation metrics (AD, KT)
+        # Non standard passes (should be changed)
         model.val_data = datamodule.val_dataloader().dataset.dataset.data[datamodule.val_dataloader().dataset.indices] # Used for validation metrics (AD, KT)
-
-        trainer.fit(model=model, datamodule=datamodule, ckpt_path=cfg.get("ckpt_path"))
+        os.mkdir(cfg["paths"]["output_dir"] + "/visualisations/")
+        model.log_dir = cfg["paths"]["output_dir"] # Used for per epoch plots
+        # Training
+        trainer.fit(model=model, datamodule=datamodule,
+                    ckpt_path=cfg.get("ckpt_path"))
         trainer.save_checkpoint(cfg.paths.output_dir + "/checkpoints/last.ckpt")
 
     train_metrics = trainer.callback_metrics
