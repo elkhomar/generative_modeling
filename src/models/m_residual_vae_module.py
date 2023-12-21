@@ -28,6 +28,7 @@ class beta_VAEModule(LightningModule):
         self.latent_dim = latent_dim
 
         self.beta = self.hparams.beta
+        self.alpha = 1.0
         self.predict_log = predict_log
 
         self.mse = nn.MSELoss(reduction="mean")
@@ -47,8 +48,18 @@ class beta_VAEModule(LightningModule):
         self.log_var = nn.Linear(encoder_dims[2], latent_dim)
 
         # Decoder
-        self.decoder = nn.Sequential(
-            nn.Linear(latent_dim, decoder_dims[0]),
+        self.decoder1 = nn.Sequential(
+            nn.Linear(latent_dim//2, decoder_dims[0]),
+            nn.LeakyReLU(),
+            nn.Linear(decoder_dims[0], decoder_dims[1]),
+            nn.LeakyReLU(),
+            nn.Linear(decoder_dims[1], decoder_dims[2]),
+            nn.LeakyReLU(),
+            nn.Linear(decoder_dims[2], input_dim)
+        )
+        
+        self.decoder2 = nn.Sequential(
+            nn.Linear(latent_dim//2, decoder_dims[0]),
             nn.LeakyReLU(),
             nn.Linear(decoder_dims[0], decoder_dims[1]),
             nn.LeakyReLU(),
@@ -85,7 +96,9 @@ class beta_VAEModule(LightningModule):
         return mu, log_var
 
     def decode(self, z):
-        return self.decoder(z)  # use .exp() to make a lognormal prior and F.normalize(z) for spherical latent space
+        e = F.normalize(z[:, :self.latent_dim//2])
+        g = z[:, self.latent_dim//2:]
+        return self.decoder1(g) + self.alpha*self.decoder2(e)  # spherical + gaussian prior
 
     def reparameterize(self, mu, log_var):
         std = torch.exp(0.5 * log_var)
