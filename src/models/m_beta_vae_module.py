@@ -4,7 +4,7 @@ import torch.nn.functional as F
 from torch.utils.data import DataLoader
 from lightning import LightningModule
 from torchmetrics import MaxMetric, MeanMetric
-from src.custom_metrics import absolute_kendall_error, anderson_darling_distance
+from src.custom_metrics import absolute_kendall_error_torch, anderson_darling_distance
 from src.visualisations import log_pairplots
 import seaborn as sns
 
@@ -166,7 +166,7 @@ class beta_VAEModule(LightningModule):
         self.val_AD(anderson_darling_distance(x, x_hat))
         self.log("val/AD", self.val_AD, on_step=False, on_epoch=True, prog_bar=True)
         
-        self.val_AK(absolute_kendall_error(x, x_hat))
+        self.val_AK(absolute_kendall_error_torch(x, x_hat))
         self.log("val/AK", self.val_AK, on_step=False, on_epoch=True, prog_bar=True)
 
         if (self.current_epoch % 1 == 0):
