@@ -16,19 +16,19 @@ from pathlib import Path
 
 class log_returns_Dataset(Dataset):
 
-    def __init__(self, root_path):
+    def __init__(self, root_path, apply_log=False):
         df = pd.read_csv(Path(root_path), sep=',', header=None)
         tensor = torch.from_numpy(df.values).float()
-
         self.mean = tensor[:, 1:].mean(dim=0)
         self.std = tensor[:, 1:].std(dim=0)
         self.data = tensor[:, 1:]
+        self.apply_log = apply_log
 
     def __len__(self):
         return len(self.data)
 
     def __getitem__(self, index):
-        return self.data[index].reshape(-1)
+        return self.data[index].reshape(-1).log() if self.apply_log else self.data[index].reshape(-1)
     
 class DataModule(LightningDataModule):
     """Example preprocessing and batching poses
@@ -64,18 +64,20 @@ class DataModule(LightningDataModule):
         batch_size: int = 8,
         num_workers: int = 0,
         pin_memory: bool = False,
-        normalize=True,
+        apply_log=False,
+
     ):
         super().__init__()
 
         # this line allows to access init params with 'self.hparams' attribute
         # also ensures init params will be stored in ckpt
         self.save_hyperparameters(logger=False)
-        self.data = log_returns_Dataset(data_dir + "data_train_log_return.csv")
+        self.data = log_returns_Dataset(data_dir + "data_train_log_return.csv", apply_log=False)
         self.data_train: Optional[Dataset] = None
         self.data_val: Optional[Dataset] = None
 
         self.train_val_split = train_val_split
+        self.apply_log = apply_log
 
     @property
     def n_features(self):
@@ -91,8 +93,8 @@ class DataModule(LightningDataModule):
         if not self.data_train and not self.data_val:
             # Training and Val set
             self.data_train, self.data_val = random_split(
-                dataset= self.data,
-                lengths= [int(self.train_val_split[0]*len(self.data)) + 1, int(self.train_val_split[1]*len(self.data))],
+                dataset=self.data,
+                lengths=[int(self.train_val_split[0]*len(self.data)) + 1, int(self.train_val_split[1]*len(self.data))],
                 generator=torch.Generator().manual_seed(42),
             )
         
@@ -122,7 +124,7 @@ class DataModule(LightningDataModule):
             pin_memory=self.hparams.pin_memory,
             shuffle=False,
         )
-    
+
     def teardown(self, stage: Optional[str] = None):
         """Clean up after fit or test."""
         pass

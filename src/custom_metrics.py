@@ -35,46 +35,6 @@ def anderson_darling_distance(generated_distribution, original_distribution):
     return anderson_darling(generated_df, original_df)
 
 
-def normalised_kendall_tau_distance(
-    original_distribution, generated_distribution
-):
-    """Compute the Kendall tau distance."""
-    
-    original_df = pd.DataFrame(original_distribution.to("cpu").numpy())
-    generated_df = pd.DataFrame(generated_distribution.to("cpu").numpy())
-
-    n = len(original_df)
-    assert len(generated_df) == n, "Both lists have to be of equal length"
-    i, j = np.meshgrid(np.arange(n), np.arange(n))
-    a = np.argsort(original_df)
-    b = np.argsort(generated_df)
-    ndisordered = np.logical_or(
-        np.logical_and(a[i] < a[j], b[i] > b[j]),
-        np.logical_and(a[i] > a[j], b[i] < b[j])
-    ).sum()
-    return ndisordered / (n * (n - 1))
-
-def absolute_kendall_error(X_og, X_gen):
-    def pseudo_obs(x):
-        n=x.shape[0]
-        d=x.shape[1]
-        M=np.zeros((n,n))
-        for i in range(n):
-            for j in range(n):
-                if(j==i):
-                    M[i,i] = False
-                else:
-                    bool=True
-                    for c in range(d):
-                        if x[j,c] >= x[i,c]: 
-                            bool=False
-                    M[i,j]=bool
-        return np.sum(M, 0)/(n-1)
-
-    Z_og=pseudo_obs(np.array(X_og.to("cpu").numpy()))
-    Z_gen=pseudo_obs(np.array(X_gen.to("cpu").numpy()))
-    return np.linalg.norm(np.sort(Z_og)-np.sort(Z_gen), 1)
-
 def absolute_kendall_error_torch(X_og, X_gen):
     d = X_og.shape[1]
     n = X_og.shape[0]

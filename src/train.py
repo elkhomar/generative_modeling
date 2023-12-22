@@ -93,7 +93,7 @@ def train(cfg: DictConfig) -> Tuple[dict, dict]:
         # Non standard passes (should be changed)
         model.val_data = datamodule.val_dataloader().dataset.dataset.data[datamodule.val_dataloader().dataset.indices] # Used for validation metrics (AD, KT)
         os.mkdir(cfg["paths"]["output_dir"] + "/visualisations/")
-        model.log_dir = cfg["paths"]["output_dir"] # Used for per epoch plots
+        model.log_dir = cfg["paths"]["output_dir"]  # Used for per epoch plots
         # Training
         trainer.fit(model=model, datamodule=datamodule,
                     ckpt_path=cfg.get("ckpt_path"))

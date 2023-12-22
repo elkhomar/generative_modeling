@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from lightning import LightningModule
-from torchmetrics import MeanMetric
+from torchmetrics import MeanMetric, MinMetric
 from src.custom_metrics import absolute_kendall_error_torch, anderson_darling_distance
 from src.visualisations import log_pairplots
 
@@ -25,7 +25,6 @@ class beta_VAEModule(LightningModule):
         # also ensures init params will be stored in ckpt
         self.save_hyperparameters(logger=False)
 
-        self.input_dim = input_dim
         self.latent_dim = latent_dim
 
         self.beta = self.hparams.beta
@@ -63,6 +62,7 @@ class beta_VAEModule(LightningModule):
         # Non standard passes (should be changed)
         self.val_data = None
         self.log_dir = None
+        self.input_dim = input_dim
 
         # Metrics
         self.train_loss = MeanMetric()
@@ -76,6 +76,8 @@ class beta_VAEModule(LightningModule):
         self.val_data = None
         self.val_AD = MeanMetric()
         self.val_AK = MeanMetric()
+        self.val_AD_min = MinMetric()
+        self.val_AK_min = MinMetric()
 
         self.test_loss = MeanMetric()
         self.test_mse = MeanMetric()
@@ -95,6 +97,14 @@ class beta_VAEModule(LightningModule):
         eps = torch.randn_like(std)
         return mu + eps * std
 
+    def sample_z(self, n):
+        z = torch.randn(n, self.latent_dim, device=self.device)
+        return z
+
+    def sample_G(self, n):
+        z = self.sample_z(n)
+        return self.decode(z)
+    
     def forward(self, x):
         mu, log_var = self.encode(x)
         z = self.reparameterize(mu, log_var)
@@ -107,10 +117,15 @@ class beta_VAEModule(LightningModule):
         self.val_loss.reset()
         self.val_mse.reset()
         self.val_kl.reset()
+        self.val_AD.reset()
+        self.val_AK.reset()
+        self.val_AD_min.reset()
+        self.val_AK_min.reset()
+
 
     def loss_function(self, x_hat, x, mu, log_var):
         # Reconstruction loss
-        mse = self.mse(x_hat, x) if self.predict_log else self.mse(x_hat, x.log())
+        mse = self.mse(x_hat, x.log())
 
         # KL divergence loss
         kld = torch.mean(-0.5 * torch.sum(1 + log_var - mu.pow(2) - log_var.exp(), axis=1))
@@ -155,18 +170,18 @@ class beta_VAEModule(LightningModule):
 
     def on_validation_epoch_end(self):
         # Generate samples and compute Anderson-Darling distance and Absolute Kendall error
-        z = torch.randn(len(self.val_data), self.latent_dim).to("cuda")  # Generate latents N(0, I)
-        x_hat = self.decode(z)
+        x = self.val_data.log()
+        x_hat = self.sample_G(len(x))
 
-        x = self.val_data if self.predict_log else self.val_data.log()
-
+        self.val_AD_min(anderson_darling_distance(x, x_hat))
+        self.log("val/AD_min", self.val_AD_min.compute(), on_step=False, on_epoch=True, prog_bar=True)
         self.val_AD(anderson_darling_distance(x, x_hat))
-        self.log("val/AD", self.val_AD, on_step=False, on_epoch=True, prog_bar=True)
-        
+        self.log("val/AD", self.val_AD, on_step=False, on_epoch=True, prog_bar=True)        
         self.val_AK(absolute_kendall_error_torch(x, x_hat))
         self.log("val/AK", self.val_AK, on_step=False, on_epoch=True, prog_bar=True)
-
-        if (self.current_epoch % 10 == 0):
+        self.val_AK_min(absolute_kendall_error_torch(x, x_hat))
+        self.log("val/AK_min", self.val_AK_min.compute(), on_step=False, on_epoch=True, prog_bar=True)
+        if (self.current_epoch % 1 == 0):
             # Create histograms of generated samples with seaborn
             log_pairplots(x_hat, x, self.current_epoch, self.log_dir + "/visualisations/")
 
@@ -207,6 +222,13 @@ class beta_VAEModule(LightningModule):
                 },
             }
         return {"optimizer": optimizer}
+    
+    def generate_final_samples(self):
+        z = self.sample_z(410)
+        x_hat = self.decode(z)
+        torch.save(x_hat, self.log_dir + "/final_samples.pt")
+        torch.save(z, self.log_dir + "/final_latent.pt")
+        return x_hat, z
 
 
 if __name__ == "__main__":

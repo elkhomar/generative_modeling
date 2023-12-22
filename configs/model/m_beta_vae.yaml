@@ -14,8 +14,6 @@ scheduler:
   factor: 0
   patience: 10
   
-input_dim: null
-
 latent_dim: 4
 
 encoder_dims:
@@ -32,3 +30,6 @@ beta : 1e-1
 activation : "LeakyReLU"
 
 predict_log : False
+
+# non standard
+input_dim: null

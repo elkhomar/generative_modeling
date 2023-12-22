@@ -18,6 +18,19 @@
             "args": "experiment=f_test",
             "console": "integratedTerminal",
             "justMyCode": true
+        },
+        {
+            "name": "train gan experiment",
+            "type": "python",
+            "request": "launch",
+            "program": "src/train.py",
+            //"program": "src/infer.py",
+            //"program": "src/random_walk_mvae_integrate.py",
+            //"program": "src/visualize_random_walk_2.py",
+            //"args": "+experiment=pose_vae/beta_vae_latent_dim.yaml",
+            "args": "experiment=gan_test",
+            "console": "integratedTerminal",
+            "justMyCode": true
         }, 
 
     ]

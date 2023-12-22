@@ -5,29 +5,26 @@
 
 defaults:
   - override /data: d_log_return.yaml
-  - override /model: m_beta_vae.yaml
+  - override /model: m_classic_gan.yaml
   - override /trainer: default.yaml
- # - override /logger: null
+  - override /logger: null
 
 # all parameters below will be merged with parameters from default configurations set above
 # this allows you to overwrite only specified parameters
 
-tags: ["log returns vae"]
+tags: ["classic Gan", "N(0, 1) noise"]
 
 seed: 42
 
 
 trainer:
-  min_epochs: 15
-  max_epochs: 15
+  min_epochs: 60
+  max_epochs: 180
 
 model:
   optimizer:
     lr: 0.001
-  predict_log: False
-  activation: "LeakyReLU"
-  beta: 1
-  latent_dim: 4
-  
+
 data:
   batch_size: 16
+  apply_log: False

@@ -1,0 +1,33 @@
+_target_: src.models.m_wgan_module.WGAN
+
+optimizer1:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 0.001
+  weight_decay: 0.0
+
+optimizer2:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 0.001
+  weight_decay: 0.0
+
+scheduler:
+  _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+  _partial_: true
+  mode: min
+
+generator:
+  _target_: src.models.components.generator.Generator
+
+discriminator:
+  _target_: src.models.components.discriminator.Discriminator
+
+latent_dim: 4 
+lr: 0.0002
+b1: 0.5
+b2: 0.999
+batch_size: 16
+
+# non standard
+input_dim: null

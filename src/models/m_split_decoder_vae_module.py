@@ -125,7 +125,7 @@ class beta_VAEModule(LightningModule):
 
     def loss_function(self, x_hat, x, mu, log_var):
         # Reconstruction loss
-        mse = self.mse(x_hat, x) if self.predict_log else self.mse(x_hat, x.log())
+        mse = self.mse(x_hat, x)
 
         # KL divergence loss
         kld = torch.mean(-0.5 * torch.sum(1 + log_var - mu.pow(2) - log_var.exp(), axis=1))
@@ -170,10 +170,10 @@ class beta_VAEModule(LightningModule):
 
     def on_validation_epoch_end(self):
         # Generate samples and compute Anderson-Darling distance and Absolute Kendall error
-        z = torch.randn(len(self.val_data), self.latent_dim).to("cuda")  # Generate latents N(0, I)
+        z = torch.randn(len(self.val_data), self.latent_dim).to(self.device)  # Generate latents N(0, I)
         x_hat = self.decode(z)
 
-        x = self.val_data if self.predict_log else self.val_data.log()
+        x = self.val_data
 
         self.val_AD(anderson_darling_distance(x, x_hat))
         self.log("val/AD", self.val_AD, on_step=False, on_epoch=True, prog_bar=True)
