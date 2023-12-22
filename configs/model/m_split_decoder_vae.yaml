@@ -1,4 +1,4 @@
-_target_: src.models.m_beta_vae_module.beta_VAEModule
+_target_: src.models.m_split_decoder_vae_module.beta_VAEModule
 
 optimizer:
   _target_: torch.optim.Adam
@@ -24,11 +24,9 @@ encoder_dims:
   - 32
 decoder_dims:
   - 8
-  - 16
-  - 32
+  - 128
+  - 128
 
 beta : 1e-1
-
-activation : "LeakyReLU"
 
 predict_log : False

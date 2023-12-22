@@ -16,6 +16,7 @@ class beta_VAEModule(LightningModule):
                  encoder_dims,
                  decoder_dims,
                  beta=1.0,
+                 activation="LeakyReLU",
                  predict_log=True,
                  ):
         super().__init__()
@@ -28,6 +29,8 @@ class beta_VAEModule(LightningModule):
         self.latent_dim = latent_dim
 
         self.beta = self.hparams.beta
+        self.activation = eval("nn." + activation)
+
         self.predict_log = predict_log
 
         self.mse = nn.MSELoss(reduction="mean")
@@ -35,11 +38,11 @@ class beta_VAEModule(LightningModule):
         # Encoder
         self.encoder = nn.Sequential(
             nn.Linear(input_dim, encoder_dims[0]),
-            nn.LeakyReLU(),
+            self.activation(),
             nn.Linear(encoder_dims[0], encoder_dims[1]),
-            nn.LeakyReLU(),
+            self.activation(),
             nn.Linear(encoder_dims[1], encoder_dims[2]),
-            nn.LeakyReLU(),
+            self.activation(),
         )
 
         # Latent vectors
@@ -49,11 +52,11 @@ class beta_VAEModule(LightningModule):
         # Decoder
         self.decoder = nn.Sequential(
             nn.Linear(latent_dim, decoder_dims[0]),
-            nn.LeakyReLU(),
+            self.activation(),
             nn.Linear(decoder_dims[0], decoder_dims[1]),
-            nn.LeakyReLU(),
+            self.activation(),
             nn.Linear(decoder_dims[1], decoder_dims[2]),
-            nn.LeakyReLU(),
+            self.activation(),
             nn.Linear(decoder_dims[2], input_dim)
         )
 

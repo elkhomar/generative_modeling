@@ -54,7 +54,7 @@ def compare_pairplots(generated_distribution, original_distribution):
         else:
             # Heatmap for the original_distribution
             sns.kdeplot(x=df2[cols[0]], y=df2[cols[1]], cmap="Reds",
-                        shade=True, bw_adjust=0.5, alpha=0.6, ax=axes[i, j])
+                        fill=True, bw_adjust=0.5, alpha=0.6, ax=axes[i, j])
             # Scatter plot overlay for the generated_distribution
             sns.scatterplot(x=df1[cols[0]], y=df1[cols[1]], alpha=0.7,
                             edgecolor=None, color='blue', ax=axes[i, j])

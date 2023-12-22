@@ -95,6 +95,7 @@ def absolute_kendall_error_torch(X_og, X_gen):
     return ld
 
 
-# df = torch.randn(1000, 4)
-# df_fake = torch.randn(1000, 4)
-# absolute_kendall_error((df_fake-2)**2, (df-2)**2)
+#df = torch.randn(1000, 4)
+#df_fake = torch.randn(1000, 4)
+#absolute_kendall_error((df_fake-2)**2, (df-2)**2)
+#a = 10

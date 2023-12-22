@@ -16,7 +16,6 @@ class beta_VAEModule(LightningModule):
                  encoder_dims,
                  decoder_dims,
                  beta=1.0,
-                 alpha=1.0,
                  predict_log=True,
                  ):
         super().__init__()
@@ -29,7 +28,6 @@ class beta_VAEModule(LightningModule):
         self.latent_dim = latent_dim
 
         self.beta = self.hparams.beta
-        self.alpha = alpha
         self.predict_log = predict_log
 
         self.mse = nn.MSELoss(reduction="mean")
@@ -48,25 +46,33 @@ class beta_VAEModule(LightningModule):
         self.mu = nn.Linear(encoder_dims[2], latent_dim)
         self.log_var = nn.Linear(encoder_dims[2], latent_dim)
 
-        # Decoder
-        self.decoder1 = nn.Sequential(
-            nn.Linear(latent_dim//2, decoder_dims[0]),
-            nn.LeakyReLU(),
-            nn.Linear(decoder_dims[0], decoder_dims[1]),
-            nn.LeakyReLU(),
-            nn.Linear(decoder_dims[1], decoder_dims[2]),
-            nn.LeakyReLU(),
-            nn.Linear(decoder_dims[2], input_dim)
-        )
 
-        self.decoder2 = nn.Sequential(
-            nn.Linear(latent_dim//2, decoder_dims[0]),
+        class split_linear(torch.nn.Module):
+            def __init__(self, in_features=12, out_features=4):
+                super().__init__()
+                self.div = in_features//out_features
+                self.ly_1 = torch.nn.Linear(in_features=self.div, out_features=1)
+                self.ly_2 = torch.nn.Linear(in_features=self.div, out_features=1)
+                self.ly_3 = torch.nn.Linear(in_features=self.div, out_features=1)
+                self.ly_4 = torch.nn.Linear(in_features=self.div, out_features=1)
+
+                
+            def forward(self, x):
+                x_1 = self.ly_1(x[:,:self.div])
+                x_2 = self.ly_2(x[:,self.div:2*self.div])
+                x_3 = self.ly_3(x[:,2*self.div:3*self.div])
+                x_4 = self.ly_4(x[:,3*self.div:])
+                return torch.cat((x_1, x_2, x_3, x_4), dim=1)
+            
+        # Decoder
+        self.decoder = nn.Sequential(
+            nn.Linear(latent_dim, decoder_dims[0]),
             nn.LeakyReLU(),
             nn.Linear(decoder_dims[0], decoder_dims[1]),
             nn.LeakyReLU(),
             nn.Linear(decoder_dims[1], decoder_dims[2]),
             nn.LeakyReLU(),
-            nn.Linear(decoder_dims[2], input_dim)
+            split_linear(decoder_dims[2], input_dim),
         )
 
         # Non standard passes (should be changed)
@@ -97,9 +103,7 @@ class beta_VAEModule(LightningModule):
         return mu, log_var
 
     def decode(self, z):
-        e = F.normalize(z[:, :self.latent_dim//2])
-        g = z[:, self.latent_dim//2:]
-        return self.decoder1(g) + self.alpha*self.decoder2(e)  # spherical + gaussian prior
+        return self.decoder(z)  # use .exp() to make a lognormal prior and F.normalize(z) for spherical latent space
 
     def reparameterize(self, mu, log_var):
         std = torch.exp(0.5 * log_var)
@@ -177,7 +181,7 @@ class beta_VAEModule(LightningModule):
         self.val_AK(absolute_kendall_error_torch(x, x_hat))
         self.log("val/AK", self.val_AK, on_step=False, on_epoch=True, prog_bar=True)
 
-        if (self.current_epoch % 10 == 0):
+        if (self.current_epoch % 1 == 0):
             # Create histograms of generated samples with seaborn
             log_pairplots(x_hat, x, self.current_epoch, self.log_dir + "/visualisations/")
 
@@ -196,7 +200,6 @@ class beta_VAEModule(LightningModule):
         self.log("test/loss", self.test_loss, on_step=True, on_epoch=True, prog_bar=True)
 
     def on_test_epoch_end(self):
-        a=10
         pass
 
     def configure_optimizers(self):

@@ -29,4 +29,6 @@ decoder_dims:
 
 beta : 1e-1
 
+alpha : null
+
 predict_log : False
